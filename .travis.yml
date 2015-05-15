@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.10'
+- '0.12'
+before_install:
+- "cd server; npm install; cd .."
+- "cd worker; npm install; cd .."
+- "cd result; npm install; cd .."
+
+script:
+- "cd server; npm run-script travis; cd .."
+- "cd worked; npm run-script travis; cd .."
+- "cd result; npm run-script travis; cd .."
