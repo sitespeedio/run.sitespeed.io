@@ -1,0 +1,6 @@
+**/.DS_Store
+**/node_modules
+**/sitespeed-result
+redis.conf
+dev.sh
+README.md
