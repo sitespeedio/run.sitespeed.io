@@ -1,0 +1,37 @@
+{
+  "name": "run.sitespeed.io-worker",
+  "version": "0.0.1",
+  "description": "Analyze a site",
+  "main": "lib/worker.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha",
+    "travis": "npm run lint && npm run test"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Peter Hedenskog",
+    "url": "http://www.peterhedenskog.com"
+  },
+  "contributors": {
+    "name": "Tobias Lidskog"
+  },
+"devDependencies": {
+  "should": "6.0.1",
+  "eslint": "0.17.1",
+  "mocha": "2.*",
+  "request": "2.55.0"
+},
+  "dependencies": {
+    "async":"0.9.0",
+    "dockerode":"2.1.2",
+    "fs-extra": "0.16.3",
+    "handlebars": "3.0.3",
+    "html-minifier": "0.7.0",
+    "moment": "2.10.2",
+    "rsmq-worker":"0.3.2",
+    "s3":"4.4.0",
+    "tar.gz":"0.1.1",
+    "winston":"1.0.0"
+  }
+}
