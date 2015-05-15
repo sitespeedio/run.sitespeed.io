@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha",
-    "travis": "npm run lint && npm run test"
+    "travis": "npm run lint"
   },
   "devDependencies": {
     "eslint": "0.17.1"
