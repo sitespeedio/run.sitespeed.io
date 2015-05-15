@@ -129,6 +129,7 @@ function startJob(message, cb) {
       },
       function(callback) {
         var data = {
+          id: message.id,
           speedIndex: speedIndex,
           score: score,
           url: config.url,
