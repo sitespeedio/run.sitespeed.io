@@ -18,6 +18,7 @@ var path = require('path'),
   index = require('./routes/index'),
   about = require('./routes/about'),
   dashboard = require('./routes/dashboard'),
+	faq = require('./routes/faq'),
   sponsors = require('./routes/sponsors'),
   result = require('./routes/result');
 
@@ -60,6 +61,7 @@ app.use('/api', api);
 app.use('/sponsors', sponsors);
 app.use('/dashboard', dashboard);
 app.use('/about', about);
+app.use('/faq', faq);
 app.use('/', index);
 
 app.use(function(req, res) {

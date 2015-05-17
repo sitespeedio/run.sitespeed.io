@@ -398,6 +398,11 @@ input[type="submit"], button{
       line-height: 1.5;
     }
 
+    #faq p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
     header {
         background-color: #fff;
         border-top: 36px solid #0095d2;
