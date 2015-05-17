@@ -3,9 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="initial-scale=1">
-    <style>
-    {{> css}}
-    </style>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body id="{{bodyId}}" class="resultpage">
     <div id="container">

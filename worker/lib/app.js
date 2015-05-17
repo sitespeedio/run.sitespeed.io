@@ -154,7 +154,14 @@ function startJob(message, cb) {
 
         });
       },
-
+      function(callback) {
+        fs.copy(path.join(__dirname, '../assets/'), path.join(dataDir, 'sitespeed-result', outputPath), function (err) {
+          if (err) {
+            log.error('Error copying files ', err);
+          }
+          callback();
+        });
+      },
       function(callback) {
         var compress = new targz().compress(path.join(dataDir, 'sitespeed-result', outputPath), path.join(dataDir,
           'sitespeed-result', outputPath, message.id + '.tar.gz'), function(err) {
