@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="initial-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Sitespeed.io results for {{url}}</title>
   </head>
   <body id="{{bodyId}}" class="resultpage">
     <div id="container">
@@ -24,7 +25,7 @@
             Test performed {{date}}
           </p>
 
-          <p class="result-user-agent">        
+          <p class="result-user-agent">
             <em>SpeedIndex:</em> <strong>{{speedIndex}}</strong>
             <em>Score:</em> <strong>{{score}}</strong>
           </p>
@@ -47,11 +48,10 @@
         <a class="homelink" href="/">Sitespeed.io</a>
 
         <ul id="footerlinks" class="footerlist">
-          <li><a href="extra.html">Extra</a></li>
-          <li><a href="process.html">Process</a></li>
-          <li><a href="bad_result.html">Bad result</a></li>
-          <li><a href="good_result.html">Good Result</a></li>
-          <li><a href="great_result.html">Great result</a></li>
+          <li><a href="http://run.sitespeed.io/about/">About</a></li>
+          <li><a href="http://run.sitespeed.io/sponsors/">Sponsors</a></li>
+          <li><a href="http://run.sitespeed.io/dashboard/">Dashboard</a></li>
+          <li><a href="http://run.sitespeed.io/faq/">FAQ</a></li>
         </ul>
 
         <ul id="footershare" class="socialcount footerlist">
