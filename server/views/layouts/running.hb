@@ -4,6 +4,7 @@
   {{> runningHead}}
 </head>
 <body id="{{{bodyId}}}">
+  {{> ga}}  
   <div id="container">
     {{{body}}}
     {{> footer}}
