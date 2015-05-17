@@ -24,13 +24,9 @@
             Test performed {{date}}
           </p>
 
-          <p class="result-user-agent">
-            <strong>
-              SpeedIndex: {{speedIndex}}
-            </strong>
-            <strong>
-              Score: {{score}}
-            </strong>
+          <p class="result-user-agent">        
+            <em>SpeedIndex:</em> <strong>{{speedIndex}}</strong>
+            <em>Score:</em> <strong>{{score}}</strong>
           </p>
 
           <div id="share-result">
