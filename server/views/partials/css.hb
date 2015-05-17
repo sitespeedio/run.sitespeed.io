@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 20px;
 }
 
@@ -411,7 +411,7 @@ input[type="submit"], button{
     }
 
     header .homelink {
-        background: #0095d2 url('../img/logos/logoHeader.svg') 10px 0 / 55% auto no-repeat;
+        background: #0095d2 url('../img/logos/logoHeader.svg') 10px 0 / 70% auto no-repeat;
         width: 295px;
         height: 62px;
         margin-top: -36px;
