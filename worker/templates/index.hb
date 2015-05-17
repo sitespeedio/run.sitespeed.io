@@ -38,11 +38,11 @@
             <a href="{{link}}"><button id="result-see-details" class="result-button">See details</button></a>
             <a href="{{id}}.tar.gz"><button id="result-download" class="result-button">Download</button></a>
             <ul id="share">
-              <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://sitespeed.io/" title="Share on Twitter"><span class="count">Tw</span></a></li>
-              <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://sitespeed.io/" title="Share on Facebook"><span class="count">Fb</span></a></li>
-              <li class="googleplus"><a href="https://plus.google.com/share?url=http://sitespeed.io/" title="Share on Google Plus"><span class="count">G+</span></a></li>
-              <li class="linkedin"><a href="https://pinterest.com/pin/create/button/?url=&media=http://sitespeed.io&description=">Pinterest</a></li>
-              <li class="pinterest"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://sitespeed.io&title=&summary=&source=">LinkedIn</a></li>
+              <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{myUrl}}" title="Share on Twitter"><span class="count">Tw</span></a></li>
+              <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{myUrl}}" title="Share on Facebook"><span class="count">Fb</span></a></li>
+              <li class="googleplus"><a href="https://plus.google.com/share?url={{myUrl}}" title="Share on Google Plus"><span class="count">G+</span></a></li>
+              <li class="linkedin"><a href="https://pinterest.com/pin/create/button/?url=&media={{myUrl}}&description=">Pinterest</a></li>
+              <li class="pinterest"><a href="https://www.linkedin.com/shareArticle?mini=true&url={{myUrl}}&title=&summary=&source=">LinkedIn</a></li>
             </ul>
           </div>
         </div>
@@ -59,10 +59,10 @@
           <li><a href="great_result.html">Great result</a></li>
         </ul>
 
-        <ul id="footershare" class="socialcount footerlist" data-url="http://sitespeed.io/" data-facebook-action="recommend" data-share-text="Sitespeed.io">
-          <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://sitespeed.io/" title="Share on Facebook"><span class="count">Fb</span></a></li>
-          <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://sitespeed.io/" title="Share on Twitter"><span class="count">Tw</span></a></li>
-          <li class="googleplus"><a href="https://plus.google.com/share?url=http://sitespeed.io/" title="Share on Google Plus"><span class="count">G+</span></a></li>
+        <ul id="footershare" class="socialcount footerlist">
+          <li class="facebook"><a href="https://www.facebook.com/sitespeed.io" title="Like on Facebook"></a></li>
+          <li class="twitter"><a href="https://twitter.com/sitespeedio" title="Follow on Twitter"></a></li>
+          <li class="github"><a href="https://github.com/sitespeedio/sitespeed.io" title="Star on Github"></a></li>
         </ul>
 
       </footer>

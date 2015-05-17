@@ -134,6 +134,7 @@ function startJob(message, cb) {
           score: score,
           url: config.url,
           link: 'index2.html',
+          myUrl: 'http://results.sitespeed.io/' + outputPath + '/',
           stars: util.getStars(score, speedIndex),
           bodyId: util.getBodyId(score, speedIndex),
           boxTitle: util.getBoxTitle(score, speedIndex)

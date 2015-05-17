@@ -14,13 +14,6 @@ log = require('winston'),
 hb = require('handlebars');
 
 var compiledTemplates = compileTemplates(path.join(__dirname, '../templates/'));
-var compiledPartials = compileTemplates(path.join(__dirname, '../templates/partials/'));
-
-for (var key in compiledPartials) {
-  if (compiledPartials.hasOwnProperty(key)) {
-    hb.registerPartial(key, compiledPartials[key]);
-  }
-}
 
 module.exports = {
 generate: function (dir, data, cb) {
