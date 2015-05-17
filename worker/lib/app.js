@@ -17,6 +17,7 @@ var RSMQWorker = require('rsmq-worker'),
   s3 = require('./s3'),
   async = require('async'),
   targz = require('tar.gz'),
+  moment = require('moment'),
   util = require('./util'),
   log = require('winston');
 
@@ -136,6 +137,7 @@ function startJob(message, cb) {
           link: 'index2.html',
           myUrl: 'http://results.sitespeed.io/' + outputPath + '/',
           stars: util.getStars(score, speedIndex),
+          date: message.date,
           bodyId: util.getBodyId(score, speedIndex),
           boxTitle: util.getBoxTitle(score, speedIndex)
         };

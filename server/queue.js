@@ -54,7 +54,8 @@ module.exports = {
 				u: config.url,
 				p: path,
 				b: config.browser,
-				c: config.connection
+				c: config.connection,
+				date: config.date.format('YYYY-MM-DD HH:mm:ss')
 			})
 		}, function(err, resp) {
 			if (resp) {

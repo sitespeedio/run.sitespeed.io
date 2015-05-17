@@ -21,17 +21,16 @@
                    value="{{url}}"/>
 
           <p class="result-test-info">
-            Test performed Mon Dec 15 2014 22:16:30 GMT+0100 (CET) with sitespeed.io-desktop rules
+            Test performed {{date}}
           </p>
 
           <p class="result-user-agent">
             <strong>
-              User-Agent:
+              SpeedIndex: {{speedIndex}}
             </strong>
-            <em>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4)</em>
-
-            speedIndex: {{speedIndex}},
-            score: {{score}},
+            <strong>
+              Score: {{score}}
+            </strong>
           </p>
 
           <div id="share-result">

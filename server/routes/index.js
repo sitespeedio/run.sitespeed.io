@@ -29,10 +29,13 @@ router.post('/', function(req, res) {
   var sessionId = uuid.v4();
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
+  var creationDate = moment();
+
   var config = {
     url: req.body.url,
     browser: req.body.browser || 'firefox',
-    connection: req.body.connection || 'cable'
+    connection: req.body.connection || 'cable',
+    date: creationDate
   };
 
 
@@ -46,7 +49,7 @@ router.post('/', function(req, res) {
   }
 
   // create the path to the result
-  var creationDate = moment();
+
   var hash = (md5(creationDate)).substring(0, 4);
   var myPath = hash + '-' + creationDate.year() + '/' + creationDate.month() + '/' + creationDate.date();
 
