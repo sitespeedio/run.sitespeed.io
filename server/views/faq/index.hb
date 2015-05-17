@@ -7,26 +7,27 @@
   <div id="content">
     <h1 id="box-title">FAQ</h1>
 
+    <h2>What happens when you test my site?</h2>
 
-    <p>Sitespeed.io is an Open Source tool that helps you analyze your website speed and performance based on performance best practices and timing metrics. This is the online version, that makes it possible for you to test drive sitespeed.io. Do you want to use all <a href="http://www.sitespeed.io/documentation/configuration/#the-options">the features</a> you should install the commmand line version using <a href="https://www.npmjs.com/package/sitespeed.io">npm</a>, use our <a href="https://registry.hub.docker.com/repos/sitespeedio/">Docker containers</a>, run it in your continious build using the <a href="https://www.npmjs.com/package/grunt-sitespeedio">GruntJS plugin</a> or the <a href="https://github.com/sitespeedio/jenkins.sitespeed.io">Jenkins plugin</a>.
+    <p>Sitespeed.io will start by crawling your site (the online version limits the number of tested pages to X, run your own instance to test more pages). Then each page is tested against web performance best practice rules using <a href="">PhantomJS</a>. After that, each page is tested Y times (run it yourself to increase number of runs) in the browser you choose, and timings is collected.
     </p>
 
+    <h2>Hey I want to test more pages of my site, how do I do that?</h2>
+    <p>Install <a href="http://www.sitespeed.io">sitespeed.io</a> on your own machine and there's no limit how many pages and how many times you can test.</p>
 
-    <h2>Command line tool</h2>
-    <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-    of Lorem Ipsum.
+    <h2>What is different connection types?</h2>
+    <p>We use the same setup as WebPageTest.
+    <ul>
+      <li>Mobile3g (1.6 Mbps/768 Kbps - 300 RTT)</li>
+      <li>Mobile3g fast (1.6 Mbps/768 Kbps - 150 RTT)</li>
+      <li>Cable (5 Mbps/1 Mbps - 28 RTT)</li>
+    </ul>
     </p>
-    <h2>The dashboard</h2>
+
+    <h2>Are there ther Open Source web performance tools?</h2>
     <p>
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-    its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-    opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
-    packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
-    uncover many web sites still in their i</p>
+      Yes there are! Try <a href="http://www.webpagetest.org">WebPageTest</a>, <a href="http://speedgun.io">SpeedGun</a> or <a href="">Phantomas</a>.
+    </p>
+
   </div>
 </div>

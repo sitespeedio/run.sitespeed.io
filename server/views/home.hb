@@ -15,9 +15,9 @@
             <option value="amsterdam">Amsterdam</option>
           </select></label>
           <label><span>Connection type:</span> <select name="connection">
-            <option value="mobile3g">Mobile3g (1.6 Mbps/768 Kbps - 300 RTT)</option>
-            <option value="mobile3gfast">Mobile3g fast (1.6 Mbps/768 Kbps - 150 RTT)</option>
-            <option value="cable">Cable (5 Mbps/1 Mbps - 28 RTT)</option>
+            <option value="mobile3g">Mobile3g</option>
+            <option value="mobile3gfast">Mobile3g fast </option>
+            <option value="cable">Cable</option>
           </select></label>
           <label><a href="http://www.sitespeed.io">More configuration options?</a></label>
           <input type="submit" value="Start analyzing">

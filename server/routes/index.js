@@ -19,8 +19,8 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('home', {
     bodyId: 'start',
-    title: 'Analyse your page against web performance best practice rules',
-    description: ''
+    title: 'Analyze your page against web performance best practice rules',
+    description: 'How fast is your site? How good does it follow web performance best practice rules? Find out by using sitespeed.io'
   });
 });
 
@@ -50,7 +50,7 @@ router.post('/', function(req, res) {
 
   // create the path to the result
 
-  var hash = (md5(creationDate)).substring(0, 4);
+  var hash = (md5(creationDate)).substring(0, 3);
   var myPath = hash + '-' + creationDate.year() + '/' + creationDate.month() + '/' + creationDate.date();
 
   queue.add(queueName, config, sessionId, myPath, function(err, id) {

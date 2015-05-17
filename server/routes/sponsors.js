@@ -13,8 +13,8 @@ router.get('/', function(req, res) {
 	res.render('sponsors/index', {
 		layout: 'main',
 		bodyId: 'flash',
-		title: 'Organisations & companies sponsoring sitespeed.io',
-		description: 'Do you want to help us keeping run.sitespeed.io up and running? The Swedish Internet Infrastructure Foundation sponsored the money for building the online version of sitespeed.io'
+		title: 'Organizations & companies sponsoring sitespeed.io',
+		description: 'Do you want to help us keeping run.sitespeed.io up and running? The Swedish Internet Infrastructure Foundation sponsored the money for building the first online version of sitespeed.io.'
 	});
 });
 
