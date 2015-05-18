@@ -4,6 +4,7 @@
   "description": "Analyze a site",
   "main": "lib/worker.js",
   "scripts": {
+    "start": "node lib/app.js",
     "lint": "eslint .",
     "test": "mocha",
     "travis": "npm run lint"

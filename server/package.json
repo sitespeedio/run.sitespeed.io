@@ -4,6 +4,7 @@
   "description": "",
   "main": "web.js",
   "scripts": {
+    "start": "node app.js",
     "lint": "eslint .",
     "test": "mocha",
     "travis": "npm run lint"
