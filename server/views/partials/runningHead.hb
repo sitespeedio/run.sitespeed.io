@@ -2,6 +2,9 @@
   <meta charset='utf-8'>
   <meta name="viewport" content="initial-scale=1">
   <title>{{title}}</title>
+  <noscript>
+    <meta http-equiv="refresh" content="30" />
+  </noscript>
   <meta name="robots" content="noindex,nofollow">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/sitespeed.io-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/mg/ico/sitespeed.io-114.png">
@@ -26,7 +29,13 @@
        setTimeout(worker, 5000);
      }
      else if (oldState !== 'unknown') {
-       location.reload();
+       document.getElementById("status").innerHTML = serverResponse.status;
+       if (serverResponse.status === 'done' || serverResponse.status === 'failed') {
+         location.reload();
+       } else {
+         oldState = serverResponse.status;
+         setTimeout(worker, 5000);
+       }
      } else {
      oldState = serverResponse.status;
      setTimeout(worker, 5000);
@@ -47,7 +56,7 @@ worker();
       document.getElementById("result").src = "http://thecatapi.com/api/images/get?format=src&type=gif&date=" + date;
   }
 
-  setInterval(function(){getACat(new Date())}, 8000);
+  setInterval(function(){getACat(new Date())}, 10000);
   </script>
   <style>
   {{> css}}
