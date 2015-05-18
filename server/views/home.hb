@@ -18,6 +18,7 @@
             <option value="mobile3g">Mobile3g</option>
             <option value="mobile3gfast">Mobile3g fast </option>
             <option value="cable">Cable</option>
+            <option value="native">Native</option>
           </select></label>
           <label><a href="http://www.sitespeed.io">More configuration options?</a></label>
           <input type="submit" value="Start analyzing">

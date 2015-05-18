@@ -21,6 +21,7 @@
       <li>Mobile3g (1.6 Mbps/768 Kbps - 300 RTT)</li>
       <li>Mobile3g fast (1.6 Mbps/768 Kbps - 150 RTT)</li>
       <li>Cable (5 Mbps/1 Mbps - 28 RTT)</li>
+      <li>Native (the current unthrottled connection)</li>
     </ul>
     </p>
 
