@@ -35,6 +35,7 @@ router.post('/', function(req, res) {
     url: req.body.url,
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
+    maxPagesToTest: req.body.maxPagesToTest || 1,
     date: creationDate
   };
 
@@ -50,14 +51,14 @@ router.post('/', function(req, res) {
 
   // create the path to the result
 
-  var hash = (md5(creationDate)).substring(0, 3);
+  var hash = (md5(creationDate)).substring(0, 4);
   var myPath = hash + '-' + creationDate.year() + '/' + creationDate.month() + '/' + creationDate.date();
 
   queue.add(queueName, config, sessionId, myPath, function(err, id) {
     if (err) {
       res.redirect('/');
     } else {
-      db.storeRun(config.url, sessionId, ip, creationDate, function() {
+      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, queueName, function() {
         res.redirect('/result/' + sessionId);
       });
     }
