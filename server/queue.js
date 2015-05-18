@@ -55,6 +55,7 @@ module.exports = {
 				p: path,
 				b: config.browser,
 				c: config.connection,
+				m: config.maxPagesToTest,
 				date: config.date.format('YYYY-MM-DD HH:mm:ss')
 			})
 		}, function(err, resp) {

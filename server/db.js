@@ -28,7 +28,7 @@ var pool = mysql.createPool({
 });
 
 module.exports = {
-  storeRun: function(url, id, ip, creationDate, cb) {
+  storeRun: function(url, id, ip, creationDate, browser, location, cb) {
 
     pool.getConnection(function(err, connection) {
 
@@ -41,6 +41,8 @@ module.exports = {
           id: null,
           url: url,
           testId: id,
+          location: location,
+          browser: browser,
           created: creationDate.format('gggg-MM-DD HH:mm:ss'),
           testerIp: ip,
           status: 'waiting'
