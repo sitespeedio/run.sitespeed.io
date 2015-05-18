@@ -27,7 +27,7 @@
 
           <p class="result-user-agent">
             <em>SpeedIndex:</em> <strong>{{speedIndex}}</strong>
-            <em>Score:</em> <strong>{{score}}</strong>
+            <em>Score:</em> <strong>{{ruleScore}}</strong>
           </p>
 
           <div id="share-result">

@@ -92,8 +92,7 @@ function startJob(message, cb) {
     dataDir: dataDir
   };
 
-  var score = -1;
-  var speedIndex = -1;
+  var metrics = {};
 
   log.debug('Starting job with url: ' + config.url + ' ' + message.id);
 
@@ -116,11 +115,11 @@ function startJob(message, cb) {
           callback(err);
         }
         if (json) {
+          var metricNamesToFetch = ['ruleScore','speedIndex','domContentLoadedTime','domInteractiveTime','firstPaint','pageLoadTime','backEndTime','frontEndTime'];
+
           json.forEach(function(aggregate) {
-            if (aggregate.id === 'ruleScore') {
-              score = aggregate.stats.median;
-            } else if (aggregate.id === 'speedIndex') {
-              speedIndex = aggregate.stats.median;
+            if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
+              metrics[aggregate.id] = aggregate.stats.median;
             }
           });
           // rename index to index2, will create a new file
@@ -131,19 +130,23 @@ function startJob(message, cb) {
       function(callback) {
         var data = {
           id: message.id,
-          speedIndex: speedIndex,
-          score: score,
           url: config.url,
           browser: config.browser,
           location: fetchQueue,
           connection: config.connection,
           link: 'index2.html',
           myUrl: 'http://results.sitespeed.io/' + outputPath + '/',
-          stars: util.getStars(score, speedIndex),
+          stars: util.getStars(metrics.ruleScore, metrics.speedIndex),
           date: message.date,
-          bodyId: util.getBodyId(score, speedIndex),
-          boxTitle: util.getBoxTitle(score, speedIndex)
+          bodyId: util.getBodyId(metrics.ruleScore, metrics.speedIndex),
+          boxTitle: util.getBoxTitle(metrics.ruleScore, metrics.speedIndex)
         };
+
+        // push the metrics
+        Object.keys(metrics).forEach(function(key) {
+          data[key] = metrics[key];
+        });
+
         generateHtml.generate(path.join(dataDir, 'sitespeed-result', outputPath), data, callback);
       },
       function(callback) {
@@ -201,13 +204,17 @@ function startJob(message, cb) {
         }));
       } else {
 
-        var status = 'done';
-        resultWorker.send(JSON.stringify({
-          status: status,
-          id: message.id,
-          score: score,
-          speedIndex: speedIndex
-        }));
+        var m = {
+          status: 'done',
+          id: message.id
+        };
+
+        // push all the metrics
+        Object.keys(metrics).forEach(function(key) {
+          m[key] = metrics[key];
+        });
+
+        resultWorker.send(JSON.stringify(m));
       }
       cb();
     });

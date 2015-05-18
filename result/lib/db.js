@@ -26,13 +26,16 @@ var pool = mysql.createPool({
 module.exports = {
 update: function (message, cb) {
 
-	var id = message.id;
-	var score = message.score || null;
-	var speedIndex = message.speedIndex || null;
-	var status = message.status;
+  var post = {changed: moment().format('gggg-MM-DD HH:mm:ss')};
 
-  var post = {score: score, speedIndex: speedIndex, status: status, changed: moment().format('gggg-MM-DD HH:mm:ss')};
-	var sql = 'UPDATE runs SET ? WHERE testId = \'' + id + '\'';
+	Object.keys(message).forEach(function(key) {
+		// just skip the id
+		if (key!=='id') {
+			post[key] = message[key];
+		}
+	});
+
+	var sql = 'UPDATE runs SET ? WHERE testId = \'' + message.id + '\'';
 	pool.getConnection(function(err, connection) {
 
     if (err) {

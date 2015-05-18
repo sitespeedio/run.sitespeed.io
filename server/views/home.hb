@@ -20,14 +20,7 @@
             <option value="cable">Cable</option>
             <option value="native">Native</option>
           </select></label>
-          <label><span>Max pages to test:</span> <select name="maxPagesToTest">
-            <option value="1">1</option>
-            <option value="2">1</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select></label>
-
+    
           <label><a href="http://www.sitespeed.io">More configuration options?</a></label>
           <input type="submit" value="Start analyzing">
         </form>
