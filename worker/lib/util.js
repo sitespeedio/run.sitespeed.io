@@ -10,6 +10,9 @@ module.exports = {
     if (score > 90 && speedIndex < 1000) {
     return '&#9733;&#9733;&#9733;&#9733;&#9733;';
     }
+    else if (speedIndex > 5000) {
+      return '&#9733;';
+    }
     else if (score > 80) {
     return '&#9733;&#9733;&#9733;&#9733;';
     }
@@ -25,6 +28,9 @@ module.exports = {
     if (score > 90 && speedIndex < 1000) {
       return 'great-result';
     }
+    else if (speedIndex > 5000) {
+      return 'bad-result';
+    }
     else if (score > 70) {
       return 'good-result';
     }
@@ -33,6 +39,9 @@ module.exports = {
   getBoxTitle: function(score, speedIndex) {
     if (score > 90 && speedIndex < 1000) {
       return 'Great performance!';
+    }
+    else if (speedIndex > 5000) {
+      return 'You can do better!';
     }
     else if (score > 70) {
       return 'Solid performance!';
