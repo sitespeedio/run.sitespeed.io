@@ -35,7 +35,7 @@ router.get('/status/:sessionId', function(req, res) {
 			});
 		} else if (status === 'done') {
 			res.json({
-				status: 'finished'
+				status: 'done'
 			});
 			// res.redirect('/results/' + row.session_id + '/');
 		} else if (status === 'running') {
