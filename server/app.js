@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /**
  * Sitespeed.io - How speedy is your site? (http://www.sitespeed.io)
  * Copyright (c) 2015, Peter Hedenskog, Tobias Lidskog
@@ -8,28 +9,41 @@
 'use strict';
 
 var path = require('path'),
-	express = require('express'),
-	compress = require('compression'),
-	handlebars = require('express-handlebars'),
+  express = require('express'),
+  compress = require('compression'),
+  handlebars = require('express-handlebars'),
   bodyParser = require('body-parser'),
-	responseTime = require('response-time'),
-	expressMinify = require('express-beautify'),
+  responseTime = require('response-time'),
+  expressMinify = require('express-beautify'),
   api = require('./routes/api'),
   index = require('./routes/index'),
   about = require('./routes/about'),
   dashboard = require('./routes/dashboard'),
-	faq = require('./routes/faq'),
+  faq = require('./routes/faq'),
+  log = require('winston'),
   sponsors = require('./routes/sponsors'),
   result = require('./routes/result');
+
+	var logLevel = process.env.LOG_LEVEL || 'info';
+	var logFile = process.env.LOG_FILE || 'server.log';
+
+	var serverPort = process.env.SERVER_PORT || 3000;
+
+	log.add(log.transports.File, {
+		filename: logFile,
+		handleExceptions: true,
+		level: logLevel,
+		json: false
+		});
 
 var app = express();
 
 var minify = expressMinify.minify({
-	collapseWhitespace: true,
-	minifyCSS: true,
-	minifyJS: true,
-	removeAttributeQuotes: true,
-	removeComments: true
+  collapseWhitespace: true,
+  minifyCSS: true,
+  minifyJS: true,
+  removeAttributeQuotes: true,
+  removeComments: true
 });
 
 app.use(compress());
@@ -37,10 +51,10 @@ app.use(responseTime());
 app.use(minify);
 
 app.engine('.hb', handlebars({
-	layoutsDir: path.join('views', 'layouts'),
-	partialsDir: path.join('views', 'partials'),
-	defaultLayout: 'main',
-	extname: '.hb'
+  layoutsDir: path.join('views', 'layouts'),
+  partialsDir: path.join('views', 'partials'),
+  defaultLayout: 'main',
+  extname: '.hb'
 }));
 app.set('view engine', '.hb');
 app.set('views', 'views');
@@ -48,11 +62,11 @@ app.set('views', 'views');
 app.enable('view cache');
 
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
-	extended: true
+  extended: true
 }));
 
 app.use('/img', express.static(path.join('public', 'img'), {
-	maxAge: '366 days'
+  maxAge: '366 days'
 }));
 
 
@@ -65,18 +79,18 @@ app.use('/faq', faq);
 app.use('/', index);
 
 app.use(function(req, res) {
-	res.status(400);
-	res.render('404', {
-		title: '404: File Not Found',
-		layout: 'main',
-		bodyId: 'extra'
-	});
+  res.status(400);
+  res.render('404', {
+    title: '404: File Not Found',
+    layout: 'main',
+    bodyId: 'extra'
+  });
 });
 
-var server = app.listen(3000, function() {
+var server = app.listen(serverPort, function() {
 
-	var host = server.address().address;
-	var port = server.address().port;
+  var host = server.address().address;
+  var port = server.address().port;
 
-	console.log('Web app listening at http://%s:%s', host, port);
+  log.info('Web app listening at http://%s:%s', host, port);
 });

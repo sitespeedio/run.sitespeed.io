@@ -21,11 +21,20 @@ var RSMQWorker = require('rsmq-worker'),
   util = require('./util'),
   log = require('winston');
 
+var logLevel = process.env.LOG_LEVEL || 'info';
+var logFile = process.env.LOG_FILE || 'worker.log';
 
 var args = process.argv.slice(2);
 
+log.add(log.transports.File, {
+  filename: logFile,
+  handleExceptions: true,
+  level: logLevel,
+  json: false
+  });
+
 if (args.length !== 2) {
-  console.log('Usage: node worker.js <FETCH_QUEUE_NAME> <DATA_DIR>');
+  log.info('Usage: node worker.js <FETCH_QUEUE_NAME> <DATA_DIR>');
   process.exit(1);
 }
 
@@ -37,7 +46,7 @@ var resultQueue = process.env.REDIS_RESULT_QUEUE;
 var redisPassword = process.env.REDIS_PASSWORD;
 
 if (!redisHost || !resultQueue || !redisPassword) {
-  console.log('Missing env info, make sure REDIS is configured ' + JSON.stringify(process.env));
+  log.info('Missing env info, make sure REDIS is configured ' + JSON.stringify(process.env));
   process.exit(1);
 }
 
@@ -51,7 +60,7 @@ var options = {
   }
 };
 
-console.log('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
+log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
 
 var fetchWorker = new RSMQWorker(fetchQueue, options);
 var resultWorker = new RSMQWorker(resultQueue, options);

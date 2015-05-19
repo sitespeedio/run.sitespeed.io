@@ -17,12 +17,23 @@ var RSMQWorker = require('rsmq-worker'),
 	var resultQueue = process.env.REDIS_RESULT_QUEUE;
 	var redisPassword = process.env.REDIS_PASSWORD;
 
+	var logLevel = process.env.LOG_LEVEL || 'info';
+	var logFile = process.env.LOG_FILE || 'receiver.log';
+
+	log.add(log.transports.File, {
+		filename: logFile,
+		handleExceptions: true,
+		level: logLevel,
+		json: false
+		});
+
 	if (!redisHost || !resultQueue || !redisPassword) {
-		console.log('Missing env info, make sure REDIS is configured ' + JSON.stringify(process.env));
+		log.info('Missing env info, make sure REDIS is configured ' + JSON.stringify(process.env));
 		process.exit(1);
 	}
 
-console.log('Starting result listener on queue ' + resultQueue);
+	log.info('Starting result listener on queue ' + resultQueue);
+
 
 var options = {
 	host: redisHost,
