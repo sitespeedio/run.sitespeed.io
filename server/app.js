@@ -51,8 +51,8 @@ app.use(responseTime());
 app.use(minify);
 
 app.engine('.hb', handlebars({
-  layoutsDir: path.join('views', 'layouts'),
-  partialsDir: path.join('views', 'partials'),
+  layoutsDir: path.join(__dirname, 'views', 'layouts'),
+  partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
   extname: '.hb'
 }));
@@ -65,7 +65,7 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
   extended: true
 }));
 
-app.use('/img', express.static(path.join('public', 'img'), {
+app.use('/img', express.static(path.join(__dirname, 'public', 'img'), {
   maxAge: '366 days'
 }));
 
