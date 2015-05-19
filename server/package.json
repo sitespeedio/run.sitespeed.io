@@ -9,6 +9,14 @@
     "test": "mocha",
     "travis": "npm run lint"
   },
+  "files": [
+    "app.js",
+    "db.js",
+    "queue.js",
+    "views",
+    "routes",
+    "public"
+  ],
   "devDependencies": {
     "eslint": "0.17.1"
   },
