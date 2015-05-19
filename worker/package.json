@@ -1,8 +1,8 @@
 {
-  "name": "run.sitespeed.io-worker",
+  "name": "@run.sitespeed.io/worker",
   "version": "0.0.1",
-  "description": "Analyze a site",
-  "main": "lib/worker.js",
+  "description": "",
+  "main": "lib/app.js",
   "scripts": {
     "start": "node lib/app.js",
     "lint": "eslint .",

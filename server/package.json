@@ -1,8 +1,8 @@
 {
-  "name": "sitespeedserver",
+  "name": "@run.sitespeed.io/server",
   "version": "0.0.1",
   "description": "",
-  "main": "web.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "lint": "eslint .",
