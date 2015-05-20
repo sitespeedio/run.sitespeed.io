@@ -29,6 +29,7 @@ RUN git clone https://github.com/sitespeedio/run.sitespeed.io.git \
 ADD ./scripts/ /home/root/scripts
 
 ENV LOG_FILE /var/log/sitespeed.io/server.log
+
 ENTRYPOINT ["/home/root/scripts/start.sh"]
 
 EXPOSE 3000
