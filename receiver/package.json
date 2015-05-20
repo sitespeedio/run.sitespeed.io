@@ -1,5 +1,5 @@
 {
-  "name": "@run.sitespeed.io/receiver",
+  "name": "run.sitespeed.io-receiver",
   "version": "0.0.1",
   "description": "Receive info from a sitespeed worker and store it in the db",
   "main": "lib/app.js",
