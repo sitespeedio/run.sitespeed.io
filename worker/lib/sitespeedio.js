@@ -7,10 +7,11 @@
 
 'use strict';
 
+var Sitespeed = require('sitespeed.io/lib/sitespeed'),
+  log = require('winston');
 
 module.exports = {
   run: function(config, cb) {
-   var Sitespeed = require('sitespeed.io/lib/sitespeed');
    var sitespeed = new Sitespeed();
    var options = {
      "url": config.url,
@@ -31,6 +32,9 @@ module.exports = {
    }
 
    sitespeed.run(options, function(err, data) {
+     if (err) {
+       log.error('Couldn\'t run sitespeed.io', err);
+     }
     cb(err);
     });
   }

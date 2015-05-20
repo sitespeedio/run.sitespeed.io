@@ -210,6 +210,7 @@ function startJob(message, cb) {
     // optional callback
     function(err, results) {
       if (err) {
+        log.error('Sending failed message on queue for ' + message.u, err);
         resultWorker.send(JSON.stringify({
           status: 'failed',
           id: message.id
