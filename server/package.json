@@ -2,7 +2,11 @@
   "name": "run.sitespeed.io-server",
   "version": "0.0.1",
   "description": "",
-  "main": "app.js",
+  "main": "./app.js",
+  "bin": "./app.js",
+  "engines": {
+    "node": ">=0.10.7"
+  },
   "scripts": {
     "start": "node app.js",
     "lint": "eslint .",
