@@ -50,8 +50,6 @@ app.use(compress());
 app.use(responseTime());
 app.use(minify);
 
-console.log('Layout:' + path.join(__dirname, 'views', 'layouts'));
-
 app.engine('.hb', handlebars({
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
   partialsDir: path.join(__dirname, 'views', 'partials'),
