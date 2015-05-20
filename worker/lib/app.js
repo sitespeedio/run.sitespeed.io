@@ -19,7 +19,10 @@ var RSMQWorker = require('rsmq-worker'),
   targz = require('tar.gz'),
   moment = require('moment'),
   util = require('./util'),
-  log = require('winston');
+  log = require('winston'),
+  Docker = require('dockerode');
+
+  var docker = new Docker(); // NOTE must have DOCKER_HOST env variable set in shell
 
 var logLevel = process.env.LOG_LEVEL || 'info';
 var logFile = process.env.LOG_FILE || 'worker.log';
@@ -50,6 +53,8 @@ if (!redisHost || !resultQueue || !redisPassword) {
   process.exit(1);
 }
 
+var dockerContainer = process.env.DOCKER_SITESPEEDIO || 'sitespeedio/sitespeed.io';
+
 var options = {
   host: redisHost,
   invisibletime: 120,
@@ -59,8 +64,6 @@ var options = {
     'auth_pass': redisPassword
   }
 };
-
-log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
 
 var fetchWorker = new RSMQWorker(fetchQueue, options);
 var resultWorker = new RSMQWorker(resultQueue, options);
@@ -77,6 +80,27 @@ fetchWorker.on('message', function(msg, next) {
 fetchWorker.on('error', function(err, msg) {
   log.error('Error fetching message ' + msg.id, err);
 });
+
+
+log.info('Start downloading container ' + dockerContainer);
+
+docker.pull(dockerContainer, function(err, stream) {
+
+  if (err) {
+    log.error('Couldn\'t download container' , err);
+  }
+  docker.modem.followProgress(stream, onFinished, onProgress);
+
+  function onFinished(err, output) {
+    log.info('Finished downloading container');
+
+  }
+  function onProgress(event) {
+    log.debug('event:' + event.status);
+  }
+});
+
+log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
 
 fetchWorker.start();
 
