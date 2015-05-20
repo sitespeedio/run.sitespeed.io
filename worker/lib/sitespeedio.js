@@ -22,7 +22,7 @@ module.exports = {
      "outputFolderName": config.outputPath,
      "suppressDomainFolder": true,
      "connection": config.connection,
-    "resultBaseDir": config.dataDir,
+    "resultBaseDir": config.dataDir + '/sitespeed-result',
     "html": true
    };
 
