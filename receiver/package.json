@@ -2,7 +2,11 @@
   "name": "run.sitespeed.io-receiver",
   "version": "0.0.1",
   "description": "Receive info from a sitespeed worker and store it in the db",
-  "main": "lib/app.js",
+  "main": "./lib/app.js",
+  "bin": "./lib/app.js",
+  "engines": {
+    "node": ">=0.10.7"
+  },
   "scripts": {
     "start": "node lib/app.js",
     "lint": "eslint .",
