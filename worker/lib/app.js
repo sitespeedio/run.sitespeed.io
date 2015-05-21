@@ -148,10 +148,10 @@ function startJob(message, cb) {
           connection: config.connection,
           link: 'index2.html',
           myUrl: 'http://results.sitespeed.io/' + outputPath + '/',
-          stars: util.getStars(metrics.ruleScore, metrics.speedIndex),
+          stars: util.getStars(message.c, metrics.ruleScore, metrics.speedIndex),
           date: message.date,
-          bodyId: util.getBodyId(metrics.ruleScore, metrics.speedIndex),
-          boxTitle: util.getBoxTitle(metrics.ruleScore, metrics.speedIndex)
+          bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.speedIndex),
+          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.speedIndex)
         };
 
         // push the metrics

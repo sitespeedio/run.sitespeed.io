@@ -26,7 +26,7 @@
           </p>
 
           <p class="result-user-agent">
-            <em>SpeedIndex:</em> <strong>{{speedIndex}}</strong>
+            <em>RUMSpeedIndex:</em> <strong>{{speedIndex}}</strong>
             <em>Score:</em> <strong>{{ruleScore}}</strong>
           </p>
 

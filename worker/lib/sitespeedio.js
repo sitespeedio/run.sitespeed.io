@@ -22,8 +22,8 @@ module.exports = {
      "outputFolderName": config.outputPath,
      "suppressDomainFolder": true,
      "connection": config.connection,
-    "resultBaseDir": config.dataDir + '/sitespeed-result',
-    "html": true
+     "resultBaseDir": config.dataDir + '/sitespeed-result',
+     "html": true
    };
 
    if (process.env.NODE_ENV  === 'production') {

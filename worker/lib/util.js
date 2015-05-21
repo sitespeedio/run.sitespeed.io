@@ -6,7 +6,7 @@
  */
 'use strict';
 module.exports = {
-  getStars: function(score, speedIndex) {
+  getStars: function(connection, score, speedIndex) {
     if (score > 90 && speedIndex < 1000) {
     return '&#9733;&#9733;&#9733;&#9733;&#9733;';
     }
@@ -24,7 +24,7 @@ module.exports = {
     }
     return '&#9733;';
   },
-  getBodyId: function(score, speedIndex) {
+  getBodyId: function(connection, score, speedIndex) {
     if (score > 90 && speedIndex < 1000) {
       return 'great-result';
     }
@@ -36,7 +36,7 @@ module.exports = {
     }
     return 'bad-result';
   },
-  getBoxTitle: function(score, speedIndex) {
+  getBoxTitle: function(connection, score, speedIndex) {
     if (score > 90 && speedIndex < 1000) {
       return 'Great performance!';
     }

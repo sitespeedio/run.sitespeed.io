@@ -35,7 +35,8 @@ router.post('/', function(req, res) {
     url: req.body.url,
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
-    maxPagesToTest: req.body.maxPagesToTest || 1,
+    maxPagesToTest: 3,
+    numberOfRuns: 3,
     date: creationDate
   };
 
