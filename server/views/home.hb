@@ -20,8 +20,6 @@
             <option value="cable">Cable</option>
             <option value="native">Native</option>
           </select></label>
-    
-          <label><a href="http://www.sitespeed.io">More configuration options?</a></label>
           <input type="submit" value="Start analyzing">
         </form>
 

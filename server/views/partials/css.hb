@@ -183,7 +183,7 @@ body#start {
 }
 
 input[type="submit"], button{
-    font-size: 16px;
+    font-size: 18px;
     border: 0 none;
     padding: 0.25em 1em;
     -webkit-border-radius: 3px;
@@ -618,6 +618,11 @@ input[type="submit"], button{
 
     #analyze-form {
         margin-bottom:3em;
+    }
+
+    #analyze-form input[type="submit"] {
+        width: 100%;
+        padding: 0.5em 1em;
     }
 
     /* Processing */
