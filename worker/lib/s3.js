@@ -52,7 +52,7 @@ module.exports = {
     });
 
     uploader.on('progress', function() {
-      log.debug('Uploading ', uploader.progressAmount, uploader.progressTotal);
+      // log.debug('Uploading ', uploader.progressAmount, uploader.progressTotal);
     });
 
     uploader.on('end', function() {
