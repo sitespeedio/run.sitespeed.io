@@ -10,7 +10,7 @@
 'use strict';
 
 var RSMQWorker = require('rsmq-worker'),
-  sitespeedio = require('./sitespeedio'),
+  docker = require('./docker'),
   path = require('path'),
   generateHtml = require('./generateHtml'),
   fs = require('fs-extra'),
@@ -80,6 +80,7 @@ fetchWorker.on('error', function(err, msg) {
 
 log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
 
+docker.pull(function(){console.log('finished pulling')});
 fetchWorker.start();
 
 
@@ -117,7 +118,7 @@ function startJob(message, cb) {
         callback();
       },
       function(callback) {
-        sitespeedio.run(config, callback);
+        docker.run(config, callback);
       },
       function(callback) {
         var json;
