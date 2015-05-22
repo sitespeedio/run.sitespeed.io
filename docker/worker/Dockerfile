@@ -14,7 +14,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     build-essential \
     npm --no-install-recommends && \
     ln -s /usr/bin/nodejs /usr/local/bin/node && \
-    git clone https://github.com/sitespeedio/run.sitespeed.io.git -b did && \
+    git clone https://github.com/sitespeedio/run.sitespeed.io.git && \
     cd run.sitespeed.io/worker && \
     npm install -g && \
     npm cache clean && \
