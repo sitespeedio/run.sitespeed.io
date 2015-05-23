@@ -80,7 +80,11 @@ fetchWorker.on('error', function(err, msg) {
 
 log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
 
-docker.pull(function(){console.log('finished pulling')});
+// TODO wait on the pull before we start
+docker.pull(function(){
+  log.info('Finished pulling the container');
+  }
+);
 fetchWorker.start();
 
 

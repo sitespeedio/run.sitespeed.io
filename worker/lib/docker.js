@@ -7,27 +7,28 @@
 
 'use strict';
 
-var Docker = require('dockerode');
+var Docker = require('dockerode'),
+  log = require('winston');
 
 var docker = new Docker(); // NOTE must have DOCKER_HOST env variable set in shell
-
 
 module.exports = {
 
   pull: function(cb) {
-  docker.pull('sitespeedio/sitespeed.io', function(err, stream) {
-  docker.modem.followProgress(stream, onFinished, onProgress);
+    docker.pull('sitespeedio/sitespeed.io', function(err, stream) {
+      docker.modem.followProgress(stream, onFinished, onProgress);
 
-  function onFinished(err, output) {
-    if (err) {
-      console.log('Error:' + err);
-    }
-    cb();
-  }
-  function onProgress(event) {
-    console.log(event.status);
-  }
-  });
+      function onFinished(err, output) {
+        if (err) {
+          log.error('Error:' + err);
+        }
+        cb();
+      }
+
+      function onProgress(event) {
+        log.debug(event.status);
+      }
+    });
   },
   run: function(config, cb) {
 
