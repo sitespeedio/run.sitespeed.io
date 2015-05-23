@@ -23,7 +23,7 @@ module.exports = {
         if (err) {
           log.error('Error:' + err);
         }
-        cb();
+        cb(err);
       }
 
       function onProgress(event) {
@@ -49,7 +49,6 @@ module.exports = {
       '--seleniumServer', 'http://127.0.0.1:4444/wd/hub', '--phantomjsPath',
       '/usr/local/phantomjs/bin/phantomjs'
     ], myStream, function(err, data, container) {
-      console.log(err);
       cb(err);
     }).on('container', function(container) {
       container.defaultOptions.start.Binds = [config.dataDir + ':/sitespeed.io:rw'];

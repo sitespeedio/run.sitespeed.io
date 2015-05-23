@@ -77,15 +77,26 @@ fetchWorker.on('error', function(err, msg) {
   log.error('Error fetching message ' + msg.id, err);
 });
 
+async.series([
+    function(callback){
+      log.info('Pull the container');
+      docker.pull(function(err){
+        if (!err) {
+          log.info('Finished pulling the container');
+        }
+        callback(err);
+        }
+      );
+    }
+],
 
-log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
-
-// TODO wait on the pull before we start
-docker.pull(function(){
-  log.info('Finished pulling the container');
+function(err, results){
+  if (err) {
+  } else {
+    log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
+    fetchWorker.start();
   }
-);
-fetchWorker.start();
+});
 
 
 function startJob(message, cb) {
