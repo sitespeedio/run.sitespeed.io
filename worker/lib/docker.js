@@ -32,13 +32,19 @@ module.exports = {
   },
   run: function(config, cb) {
 
+    var stream = {
+    write: function(message, encoding){
+        log.info(message);
+      }
+    };
+
     docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
       '-d', '' + config.deepth,
       '--browser', config.browser, '--no', '' + config.no, '--outputFolderName', config.outputPath,
       '--suppressDomainFolder', '--connection', config.connection,
       '--seleniumServer', 'http://127.0.0.1:4444/wd/hub', '--phantomjsPath',
       '/usr/local/phantomjs/bin/phantomjs'
-    ], process.stdout, function(err, data, container) {
+    ], stream, function(err, data, container) {
       cb(err);
     }).on('container', function(container) {
       container.defaultOptions.start.Binds = [config.dataDir + ':/sitespeed.io:rw'];
