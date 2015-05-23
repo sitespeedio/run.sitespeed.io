@@ -8,7 +8,8 @@
 'use strict';
 
 var Docker = require('dockerode'),
-  log = require('winston');
+  log = require('winston'),
+  stream = require('stream');
 
 var docker = new Docker(); // NOTE must have DOCKER_HOST env variable set in shell
 
@@ -32,11 +33,14 @@ module.exports = {
   },
   run: function(config, cb) {
 
-    var stream = {
-    write: function(message, encoding){
-        log.info(message);
-      }
-    };
+    var myStream = new stream.Stream()
+    myStream.writable = true
+    myStream.write = function(data) {
+      log.debug(data);
+      return true;
+    }
+    myStream.end = function(data) {
+    }
 
     docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
       '-d', '' + config.deepth,
@@ -44,7 +48,8 @@ module.exports = {
       '--suppressDomainFolder', '--connection', config.connection,
       '--seleniumServer', 'http://127.0.0.1:4444/wd/hub', '--phantomjsPath',
       '/usr/local/phantomjs/bin/phantomjs'
-    ], stream, function(err, data, container) {
+    ], myStream, function(err, data, container) {
+      console.log(err);
       cb(err);
     }).on('container', function(container) {
       container.defaultOptions.start.Binds = [config.dataDir + ':/sitespeed.io:rw'];
