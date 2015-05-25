@@ -76,12 +76,10 @@ var showCats = false;
   }
   else {
     document.getElementById("randomcats").innerHTML =
-    "<img src=\"http://thecatapi.com/api/images/get?format=src&type=gif&date=" + date + "\" id=\"result\">";
+    "<img src=\"//thecatapi.com/api/images/get?format=src&type=gif&date=" + date + "\" id=\"result\">";
     showCats = false;
   }
-    /*
-      document.getElementById("result").src = "http://thecatapi.com/api/images/get?format=src&type=gif&date=" + date;
-      */
+    
   }
 
   setInterval(function(){getACat(new Date())}, 10000);
