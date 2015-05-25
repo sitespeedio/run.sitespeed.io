@@ -30,7 +30,7 @@
      }
      else if (oldState !== 'unknown') {
        document.getElementById("status").innerHTML = serverResponse.status;
-       if (serverResponse.status === 'done' || serverResponse.status === 'failed') {
+       if (serverResponse.status === 'done' || serverResponse.status === 'failed') {
          location.reload();
        } else {
          oldState = serverResponse.status;
@@ -51,9 +51,37 @@
 
 worker();
 
+var showCats = false;
 
   function getACat(date) {
+
+    if (!showCats) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/texts/webperf.json", true);
+
+    xhr.onload = function() {
+    var serverResponse = JSON.parse(xhr.responseText);
+
+    var mess = serverResponse.messages[Math.floor(Math.random() * serverResponse.messages.length)];
+
+     document.getElementById("randomcats").innerHTML = mess.m;
+   };
+
+    xhr.onerror = function() {
+      // oops couldn't fetch the response
+    };
+
+    xhr.send();
+    showCats = true;
+  }
+  else {
+    document.getElementById("randomcats").innerHTML =
+    "<img src=\"http://thecatapi.com/api/images/get?format=src&type=gif&date=" + date + "\" id=\"result\">";
+    showCats = false;
+  }
+    /*
       document.getElementById("result").src = "http://thecatapi.com/api/images/get?format=src&type=gif&date=" + date;
+      */
   }
 
   setInterval(function(){getACat(new Date())}, 10000);
