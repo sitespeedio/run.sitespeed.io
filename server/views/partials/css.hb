@@ -3,7 +3,7 @@
 * {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    line-height: normal;
+    line-height: 1.5em;
 }
 
 html{
@@ -115,6 +115,16 @@ footer .homelink {
 }
 #footershare .github a{
     background:transparent url('../img/socialmedia/github-round.svg') center center /contain no-repeat;
+}
+
+
+.photo {
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.pull-left {
+  float: left!important;
 }
 
 /*Startpage specials*/
@@ -337,6 +347,8 @@ input[type="submit"], button{
         border-radius: 10px;
         background-color: #e1f6fd;
         padding: 20px;
+        font-size: 20px;
+        line-height: 1.5;
     }
 
     #start #content {
@@ -381,26 +393,6 @@ input[type="submit"], button{
         background-color: #fff;
         margin-right: 50%;
         width: 50%;
-    }
-
-    #extra p {
-      font-size: 20px;
-      line-height: 1.5;
-    }
-
-    #dashboard p {
-      font-size: 20px;
-      line-height: 1.5;
-    }
-
-    #flash p {
-      font-size: 20px;
-      line-height: 1.5;
-    }
-
-    #faq p {
-      font-size: 20px;
-      line-height: 1.5;
     }
 
     header {
@@ -513,7 +505,7 @@ input[type="submit"], button{
 @media only screen and (max-width: 768px) {
 
     body {
-        font-size: 14px;
+        font-size: 16px;
         background-color: #0095d2;
     }
 
@@ -598,10 +590,6 @@ input[type="submit"], button{
         background: transparent url('../img/cat/cat_with_gears.svg') center 0 / contain no-repeat;
     }
 
-    #process h1#box-title:after {
-        background: transparent url('../img/cat/cat_inspecting.svg') center 0 / contain no-repeat;
-    }
-
     #bad-result h1#box-title:after {
         background: transparent url('../img/cat/cat_bad_result.svg') center 0 / contain no-repeat;
     }
@@ -667,7 +655,7 @@ input[type="submit"], button{
 
     /* Footer */
     footer {
-        font-size: 20px;
+        font-size: 16px;
         overflow:hidden;
         margin-bottom:20px;
         text-align:center;

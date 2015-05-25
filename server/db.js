@@ -68,13 +68,13 @@ module.exports = {
       var post = {
         testId: id
       };
-      var query = connection.query('SELECT status, created FROM runs WHERE ?', post, function(error, results, fields) {
+      var query = connection.query('SELECT status, created, url FROM runs WHERE ?', post, function(error, results, fields) {
         if (error) {
           log.error('Couldn\'t get status from the the database', query.sql, post, error);
           cb(error);
         } else {
           if (results && results[0]) {
-            cb(null, results[0].status, results[0].created);
+            cb(null, results[0].status, results[0].created, results[0].url);
           } else {
             // ooops we should return a error here
             cb();

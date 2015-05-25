@@ -15,10 +15,10 @@
             <option value="amsterdam">Amsterdam</option>
           </select></label>
           <label><span>Connection type:</span> <select name="connection">
-            <option value="mobile3g">Mobile3g</option>
-            <option value="mobile3gfast">Mobile3g fast</option>
-            <option value="cable">Cable</option>
-            <option value="native">Native</option>
+            <option value="mobile3g">mobile3g</option>
+            <option value="mobile3gfast">mobile3g fast</option>
+            <option value="cable">cable</option>
+            <option value="native">native</option>
           </select></label>
           <input type="submit" value="Start analyzing">
         </form>

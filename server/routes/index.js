@@ -27,7 +27,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   var queueName = req.body.location || 'nyc';
   var sessionId = uuid.v4();
-  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ip = req.headers['X-Real-IP'] || req.connection.remoteAddress;
 
   var creationDate = moment();
 

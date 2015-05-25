@@ -24,11 +24,5 @@
       <li>Native (the current unthrottled connection)</li>
     </ul>
     </p>
-
-    <h2>Are there ther Open Source web performance tools?</h2>
-    <p>
-      Yes there are! Try <a href="http://www.webpagetest.org">WebPageTest</a>, <a href="http://speedgun.io">SpeedGun</a> or <a href="https://github.com/macbre/phantomas">Phantomas</a>.
-    </p>
-
   </div>
 </div>

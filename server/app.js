@@ -69,6 +69,10 @@ app.use('/img', express.static(path.join(__dirname, 'public', 'img'), {
   maxAge: '366 days'
 }));
 
+app.use('/texts', express.static(path.join(__dirname, 'public', 'texts'), {
+  maxAge: '10 minutes'
+}));
+
 
 app.use('/result', result);
 app.use('/api', api);

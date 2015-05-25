@@ -17,7 +17,7 @@ var router = express.Router();
 router.get('/:sessionId', function(req, res) {
 	var sessionId = req.params.sessionId;
 
-	db.getStatus(sessionId, function(err, status, created) {
+	db.getStatus(sessionId, function(err, status, created, url) {
 
 		if (err) {
 			log.error(err);
@@ -27,12 +27,16 @@ router.get('/:sessionId', function(req, res) {
 			});
 			return;
 		}
-		if (status === 'waiting') {
+		if (status === 'running' || status === 'uploading' || status === 'waiting') {			
+			res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+			res.header("Pragma", "no-cache");
+			res.header("Expires", 0);
 			res.render('running', {
 				status: status,
 				layout: 'running',
 				'id': sessionId,
-				bodyId: 'process'
+				bodyId: 'process',
+				url: url
 			});
 		} else if (status === 'done') {
 			var date = moment(created);
@@ -40,26 +44,13 @@ router.get('/:sessionId', function(req, res) {
 			var myPath = hash + '-' + date.year() + '/' + date.month() + '/' + date.date();
 			res.redirect('http://results.sitespeed.io/' + myPath + '/' + sessionId + '/index.html');
 
-		} else if (status === 'running') {
-			res.render('running', {
-				status: status,
-				layout: 'running',
-				'id': sessionId,
-				bodyId: 'process'
-			});
-		} else if (status === 'uploading') {
-			res.render('running', {
-				status: status,
-				layout: 'running',
-				'id': sessionId,
-				bodyId: 'process'
-			});
 		} else {
 			res.render('failed', {
 				status: status,
 				layout: 'main',
 				'id': sessionId,
-				bodyId: 'extra'
+				bodyId: 'extra',
+				url: url
 			});
 		}
 	});
