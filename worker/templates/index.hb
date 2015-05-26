@@ -11,7 +11,7 @@
       <div id="top"></div>
 
       <header>
-        <a class="homelink" href="http://run.sitespeed.io">sitespeed.io</a>
+        <a class="homelink" href="https://run.sitespeed.io">sitespeed.io</a>
       </header>
       <div id="page">
         <div id="content">
@@ -45,13 +45,14 @@
       </div>
       <footer>
 
-        <a class="homelink" href="/">Sitespeed.io</a>
+        <a class="homelink" href="https://run.sitespeed.io">Sitespeed.io</a>
 
         <ul id="footerlinks" class="footerlist">
-          <li><a href="//run.sitespeed.io/about/">About</a></li>
-          <li><a href="//run.sitespeed.io/sponsors/">Sponsors</a></li>
-          <li><a href="//run.sitespeed.io/dashboard/">Dashboard</a></li>
-          <li><a href="//run.sitespeed.io/faq/">FAQ</a></li>
+          <li><a href="https://run.sitespeed.io/">Home</a></li>
+          <li><a href="https://run.sitespeed.io/about/">About</a></li>
+          <li><a href="https://run.sitespeed.io/sponsors/">Sponsors</a></li>
+          <li><a href="https://run.sitespeed.io/dashboard/">Dashboard</a></li>
+          <li><a href="https://run.sitespeed.io/faq/">FAQ</a></li>
         </ul>
 
         <ul id="footershare" class="socialcount footerlist">

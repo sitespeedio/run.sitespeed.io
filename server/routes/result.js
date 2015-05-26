@@ -27,7 +27,21 @@ router.get('/:sessionId', function(req, res) {
 			});
 			return;
 		}
-		if (status === 'running' || status === 'uploading' || status === 'waiting') {			
+		 if (status === 'done') {
+			var date = moment(created);
+			var hash = (md5(date)).substring(0, 4);
+			var myPath = hash + '-' + date.year() + '/' + date.month() + '/' + date.date();
+			res.redirect('http://results.sitespeed.io/' + myPath + '/' + sessionId + '/index.html');
+
+		} else if (status === 'failed') {
+			res.render('failed', {
+				status: status,
+				layout: 'main',
+				'id': sessionId,
+				bodyId: 'extra',
+				url: url
+			});
+		} else {
 			res.header("Cache-Control", "no-cache, no-store, must-revalidate");
 			res.header("Pragma", "no-cache");
 			res.header("Expires", 0);
@@ -36,20 +50,6 @@ router.get('/:sessionId', function(req, res) {
 				layout: 'running',
 				'id': sessionId,
 				bodyId: 'process',
-				url: url
-			});
-		} else if (status === 'done') {
-			var date = moment(created);
-			var hash = (md5(date)).substring(0, 4);
-			var myPath = hash + '-' + date.year() + '/' + date.month() + '/' + date.date();
-			res.redirect('http://results.sitespeed.io/' + myPath + '/' + sessionId + '/index.html');
-
-		} else {
-			res.render('failed', {
-				status: status,
-				layout: 'main',
-				'id': sessionId,
-				bodyId: 'extra',
 				url: url
 			});
 		}

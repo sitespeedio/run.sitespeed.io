@@ -13,10 +13,34 @@
       "m":"Stefan Judis & Marco Biedermann runs <a href='http://perf-tooling.today/'>Perf Tooling Today</a> - a collection of resources which will help you to improve your workflow and to deliver better and faster websites."
     },
     {
-      "m":"Have you read about the <a href='http://www.peterhedenskog.com/blog/2015/02/building-a-new-sitespeed.io/' target='_blank'>story how sitespeed.io was built?"
+      "m":"Read the story <a href='http://www.peterhedenskog.com/blog/2015/02/building-a-new-sitespeed.io/' target='_blank'>how sitespeed.io was built</a>."
     },
     {
       "m":"Want to continously test your site? Test the <a href='http://www.peterhedenskog.com/blog/2015/04/open-source-performance-dashboard/'>Open Source Web Performance Dashboard</a>."
+    },
+    {
+      "m":"Want to know more about how to foster a culture around web performance in organizations? Checkout Katie Kovalcin and Tim Kadlec podcast <a href='http://pathtoperf.com/' target='_blank'>Path To Performance</a>"
+    },
+    {
+      "m":"Do you know that Andy Davies was the only in the world who scored 100% in a SpeedGeek challenge? You better <a href='https://twitter.com/andydavies' target='_blank'>follow him</a> on Twitter!"
+    },
+    {
+      "m":"<a href='https://www.womenwhocode.com/' target='_blank'>Woman Who Code</a> is a non-profit dedicated to inspiring women to excel in technology careers. You could and should support them!"
+    },
+    {
+      "m":"Ilya Grigorik is a web performance engineer and developer advocate at Google and you should follow him on <a href='https://github.com/igrigorik' target='_blank'>Github</a> and <a href='https://twitter.com/igrigorik' target='_blank'>Twitter</a> becasue knows alot about web performance!"
+    },
+    {
+      "m":"Steve Souders is the Godfather of web performance. Make sure you check out his <a href='https://www.stevesouders.com/' target='_blank'>blog</a>!"
+    },
+    {
+      "m":"Wesley Hales created <a href='http://speedgun.io' target='_blank'>, another cool Open Source web performance tool."
+    },
+    {
+      "m":"Wesley Hales created <a href='http://speedgun.io' target='_blank'>, another cool Open Source web performance tool."
+    },
+    {
+      "m":"Read the excellent posts by Tim Kadlec about <a href='http://timkadlec.com/2013/01/setting-a-performance-budget/' target='_blank'>Setting a performance budget</a> and <a href='http://timkadlec.com/2014/01/fast-enough/' target='_blank'>Fast enough</a>."
     }
   ]
 }

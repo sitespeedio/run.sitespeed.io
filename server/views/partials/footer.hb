@@ -3,6 +3,7 @@
   <a class="homelink" href="/">Sitespeed.io</a>
 
   <ul id="footerlinks" class="footerlist">
+    <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/sponsors/">Sponsors</a></li>
     <li><a href="/dashboard/">Dashboard</a></li>

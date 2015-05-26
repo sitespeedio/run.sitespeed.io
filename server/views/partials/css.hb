@@ -218,6 +218,11 @@ input[type="submit"], button{
     position:relative;
 }
 
+#randomtexts{
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
 #randomcats img{
     width:100%;
     height:auto;
@@ -436,6 +441,7 @@ input[type="submit"], button{
     #analyze-form span {
         float: left;
         padding-top: 0.5em;
+        font-size: 16px;
     }
 
     #analyze-form input[type="submit"] {

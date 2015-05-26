@@ -31,16 +31,36 @@ module.exports = {
       }
     });
   },
-  run: function(config, cb) {
+  run: function(config, resultWorker,  cb) {
 
     var myStream = new stream.Stream()
     myStream.writable = true
     myStream.write = function(data) {
       log.debug(data);
+
+      var status = undefined;
+
+      if (data.indexOf('Will crawl') > -1) {
+          status = 'crawling';
+      } else if (data.indexOf('Running YSlow') > -1 ) {
+        status = 'analyzing';
+      }
+      else if (data.indexOf('Running browsertime') > -1) {
+        status =  'measuring';
+      }
+
+      if (status) {
+        resultWorker.send(JSON.stringify({
+          id: config.id,
+          status: status
+        }));
+      }
+
       return true;
-    }
+    };
+
     myStream.end = function(data) {
-    }
+    };
 
     docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
       '-d', '' + config.deepth,

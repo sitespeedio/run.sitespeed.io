@@ -32,6 +32,14 @@
        var display = 'Testing your site';
        if (serverResponse.status === 'waiting') {
          display = 'Waiting in line';
+       } else if (serverResponse.status === 'uploading') {
+         display = 'Uploading the result';
+       } else if (serverResponse.status === 'crawling') {
+         display = 'Crawling the site';
+       } else if (serverResponse.status === 'analyzing') {
+         display = 'Analyzing the pages';
+       } else if (serverResponse.status === 'measuring') {
+         display = 'Collecting timing metrics';
        }
        document.getElementById('box-title').innerHTML = display;
        if (serverResponse.status === 'done' || serverResponse.status === 'failed') {

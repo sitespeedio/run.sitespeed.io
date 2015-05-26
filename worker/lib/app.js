@@ -117,7 +117,8 @@ function startJob(message, cb) {
     no: message.n || 1,
     deepth: message.d || 1,
     outputPath: outputPath,
-    dataDir: dataDir
+    dataDir: dataDir,
+    id:  message.id
   };
 
   var metrics = {};
@@ -133,7 +134,7 @@ function startJob(message, cb) {
         callback();
       },
       function(callback) {
-        docker.run(config, callback);
+        docker.run(config, resultWorker, callback);
       },
       function(callback) {
         var json;

@@ -29,29 +29,9 @@ router.get('/status/:sessionId', function(req, res) {
 			});
 			return;
 		}
-		if (status === 'waiting') {
-			res.json({
-				status: 'waiting'
+		res.json({
+				status: status
 			});
-		} else if (status === 'done') {
-			res.json({
-				status: 'done'
-			});
-			// res.redirect('/results/' + row.session_id + '/');
-		} else if (status === 'running') {
-			res.json({
-				status: 'running'
-			});
-		} else if (status === 'uploading') {
-			res.json({
-				status: 'uploading'
-			});
-		} else {
-			res.json({
-				status: 'failed'
-			});
-		}
-
 	});
 
 });

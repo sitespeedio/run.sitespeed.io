@@ -11,7 +11,7 @@
 
     <p>Do you want see sitespeed.io in all its glory and use all <a href="http://www.sitespeed.io/documentation/configuration/#the-options">the features</a> you should install the commmand line version using <a href="https://www.npmjs.com/package/sitespeed.io">npm</a> or use our <a href="https://registry.hub.docker.com/repos/sitespeedio/">Docker containers</a>.</p>
 
-    <p>If you really care about performance run it in your continuous build using the <a href="https://www.npmjs.com/package/grunt-sitespeedio">GruntJS</a>, <a href="https://www.npmjs.com/package/gulp-sitespeedio">Gulp</a> or <a href="https://github.com/sitespeedio/jenkins.sitespeed.io">Jenkins plugin</a>.
+    <p>If you really care about performance run it in your continuous build using <a href="https://www.npmjs.com/package/grunt-sitespeedio">GruntJS</a>, <a href="https://www.npmjs.com/package/gulp-sitespeedio">Gulp</a> or the <a href="https://github.com/sitespeedio/jenkins.sitespeed.io">Jenkins plugin</a>.
     </p>
 
     <p>And are you super serious about performance you can use <a href="http://www.sitespeed.io">sitespeed.io</a> + <a href="http://graphite.wikidot.com/">Graphite</a> + <a href="http://grafana.org/">Grafana</a> to make a really nice <a href="/dashboard/">Open Source Web Perfomance Dashboard</a>.</p>
