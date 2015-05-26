@@ -7,7 +7,7 @@
   <div id="content">
     <h1 id="box-title">Sponsors</h1>
     <h2>The Swedish Internet Infrastructure Foundation</h2>
-    <p>In early 2015 I (Peter) was awarded by <a href="https://www.iis.se/english/about-se/">The Swedish Internet Infrastructure Foundation</a> making it possible for me to work full time on the project for three months and creating the first version of the <a href="https://www.internetfonden.se/sitespeed-io-online/">online version</a>. Massive love to <a href="https://www.internetfonden.se">Internetfonden</a> for the support!
+    <p>In early 2015 I (Peter) was awarded by <a href="https://www.iis.se/english/about-se/">The Swedish Internet Infrastructure Foundation</a> making it possible for me to work full time on the project for three months and creating the first version of the <a href="https://www.internetfonden.se/sitespeed-io-online/">online version</a>. Massive love to <a href="https://www.iis.se/english/about-se/">IIS</a> and <a href="https://www.internetfonden.se">Internetfonden</a> for the support!
     </p>
 
     <h2>More sponsors</h2>

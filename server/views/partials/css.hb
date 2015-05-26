@@ -371,6 +371,10 @@ input[type="submit"], button{
         background: transparent url('../img/cat/cat_with_gears.svg') 0 0 / contain no-repeat;
     }
 
+    #faq #page:before {
+        background: transparent url('../img/cat/magician.svg') 0 0 / contain no-repeat;
+    }
+
     #process #page:before {
         background: transparent url('../img/cat/cat_inspecting.svg') 0 0 / contain no-repeat;
     }
@@ -585,6 +589,11 @@ input[type="submit"], button{
     #flash h1#box-title:after {
         background: transparent url('../img/cat/flash.svg') center 0 / contain no-repeat;
     }
+
+    #faq h1#box-title:after {
+        background: transparent url('../img/cat/magician.svg') center 0 / contain no-repeat;
+    }
+
 
     #extra h1#box-title:after {
         background: transparent url('../img/cat/cat_with_gears.svg') center 0 / contain no-repeat;
