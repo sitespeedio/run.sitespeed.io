@@ -10,9 +10,8 @@
             <option value="chrome">Chrome</option>
           </select></label>
           <label><span>Location:</span> <select name="location">
-            <option value="nyc">NYC</option>
-            <option value="sf">SF</option>
-            <option value="amsterdam">Amsterdam</option>
+            <option value="nyc">New York [USA]</option>
+            <option value="sf">San Francisco [USA]</option>
           </select></label>
           <label><span>Connection type:</span> <select name="connection">
             <option value="mobile3g">mobile3g</option>
