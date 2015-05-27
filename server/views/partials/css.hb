@@ -575,15 +575,6 @@ padding-bottom: 10px;
         font-size: 26px;
     }
 
-    h1#box-title:after {
-        content: "";
-        height: 30vw;
-        display: block;
-        width: 30vw;
-        margin:10px;
-        float:right;
-    }
-
     #extra h1#box-title:after {
         background: transparent url('../img/cat/cat_with_gears.svg') center 0 / contain no-repeat;
     }

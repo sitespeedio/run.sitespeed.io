@@ -19,10 +19,10 @@
       "m":"Want to continously test your site? Test the <a href='http://www.peterhedenskog.com/blog/2015/04/open-source-performance-dashboard/'>Open Source Web Performance Dashboard</a>."
     },
     {
-      "m":"Want to know more about how to foster a culture around web performance in organizations? Checkout Katie Kovalcin and Tim Kadlec podcast <a href='http://pathtoperf.com/' target='_blank'>Path To Performance</a>"
+      "m":"Want to know more about how to foster a culture around web performance in organizations? Checkout Katie Kovalcin and Tim Kadlec podcast <a href='http://pathtoperf.com/' target='_blank'>Path To Performance</a>."
     },
     {
-      "m":"Do you know that Andy Davies was the only in the world who scored 100% in a SpeedGeek challenge? You better <a href='https://twitter.com/andydavies' target='_blank'>follow him</a> on Twitter!"
+      "m":"Do you know that Andy Davies was the only in the world who scored 100% in the SpeedGeek challenge? You better <a href='https://twitter.com/andydavies' target='_blank'>follow him</a> on Twitter!"
     },
     {
       "m":"<a href='https://www.womenwhocode.com/' target='_blank'>Woman Who Code</a> is a non-profit dedicated to inspiring women to excel in technology careers. You could and should support them!"
@@ -31,13 +31,16 @@
       "m":"Ilya Grigorik is a web performance engineer and developer advocate at Google and you should follow him on <a href='https://github.com/igrigorik' target='_blank'>Github</a> and <a href='https://twitter.com/igrigorik' target='_blank'>Twitter</a> because he knows alot about web performance!"
     },
     {
-      "m":"Steve Souders is the Godfather of web performance. Make sure you check out his <a href='https://www.stevesouders.com/' target='_blank'>blog</a>!"
+      "m":"Steve Souders is the Godfather of web performance. Make sure you check out his <a href='https://www.stevesouders.com/blog/' target='_blank'>blog</a>!"
     },
     {
       "m":"Wesley Hales created <a href='http://speedgun.io' target='_blank'>speedgun.io</a> -  another cool Open Source web performance tool."
     },
     {
       "m":"Read the excellent posts by Tim Kadlec about <a href='http://timkadlec.com/2013/01/setting-a-performance-budget/' target='_blank'>Setting a performance budget</a> and <a href='http://timkadlec.com/2014/01/fast-enough/' target='_blank'>Fast enough</a>."
+    },
+    {
+        "m": "Do you use a Mac and need to optimize your images? Use <a href='https://imageoptim.com/' target='_blank'>ImageOptim</a> by Kornel Lesiński, it is awesome!"
     }
   ]
 }

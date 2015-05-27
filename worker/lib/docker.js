@@ -13,6 +13,7 @@ var Docker = require('dockerode'),
 
 var docker = new Docker(); // NOTE must have DOCKER_HOST env variable set in shell
 
+
 module.exports = {
 
   pull: function(cb) {
@@ -33,20 +34,25 @@ module.exports = {
   },
   run: function(config, resultWorker,  cb) {
 
-    var myStream = new stream.Stream()
-    myStream.writable = true
+    var myStream = new stream.Stream();
+    var page = 1;
+    myStream.writable = true;
     myStream.write = function(data) {
       log.debug(data);
 
       var status = undefined;
-
       if (data.indexOf('Will crawl') > -1) {
           status = 'crawling';
       } else if (data.indexOf('Running YSlow') > -1 ) {
-        status = 'analyzing';
+        status = 'analyzing' + page;
+        page +=1;
+        if (page === 4) {
+          page = 1;
+        }
       }
       else if (data.indexOf('Running browsertime') > -1) {
-        status =  'measuring';
+        status =  'measuring' + page;
+        page +=1;
       }
 
       if (status) {
@@ -55,7 +61,6 @@ module.exports = {
           status: status
         }));
       }
-
       return true;
     };
 

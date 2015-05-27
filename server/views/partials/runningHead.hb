@@ -36,10 +36,10 @@
          display = 'Uploading the result';
        } else if (serverResponse.status === 'crawling') {
          display = 'Crawling the site';
-       } else if (serverResponse.status === 'analyzing') {
-         display = 'Analyzing the pages';
-       } else if (serverResponse.status === 'measuring') {
-         display = 'Collecting timing metrics';
+       } else if (serverResponse.status.indexOf('analyzing')>-1) {
+         display = 'Analyzing page ' + serverResponse.status.slice(9,10);
+       } else if (serverResponse.status.indexOf('measuring')>-1) {
+         display = 'Collecting timing metrics for page ' +  serverResponse.status.slice(9,10);
        }
        document.getElementById('box-title').innerHTML = display;
        if (serverResponse.status === 'done' || serverResponse.status === 'failed') {
@@ -76,7 +76,7 @@ var showCats = true;
 
     var mess = serverResponse.messages[Math.floor(Math.random() * serverResponse.messages.length)];
 
-     document.getElementById("randomtext").innerHTML = mess.m;
+     document.getElementById("randomtext").innerHTML = '<p>' + mess.m + '</p>';
    };
 
     xhr.onerror = function() {
@@ -87,8 +87,8 @@ var showCats = true;
     showCats = true;
   }
   else {
-    document.getElementById("randomcats").innerHTML =
-    "<img src=\"//thecatapi.com/api/images/get?format=src&type=gif&date=" + date + "\" id=\"result\">";
+    document.getElementById("result").src =
+    "//thecatapi.com/api/images/get?format=src&type=gif&date=" + date;
     showCats = false;
   }
 
