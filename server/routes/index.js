@@ -11,7 +11,7 @@ var express = require('express'),
   md5 = require('MD5'),
   moment = require('moment'),
   queue = require('../queue'),
-  validateUrl = require('valid-url'),
+  validateUrl = require('validator'),
   db = require('../db');
 
 var router = express.Router();
@@ -29,10 +29,20 @@ router.post('/', function(req, res) {
   var sessionId = uuid.v4();
   var ip = req.headers['X-Real-IP'] || req.connection.remoteAddress;
 
+  if (!validateUrl.isURL(req.body.url)) {
+    res.render('error', {
+      text: 'The URL isn\'t valid',
+      title: 'Ooops you need to have a valid URL',
+      description: '',
+      url: req.body.url
+    });
+    return;
+  }
+
   var creationDate = moment();
 
   var config = {
-    url: req.body.url,
+    url: req.body.url.toLowerCase(),
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
     maxPagesToTest: 3,
@@ -40,15 +50,6 @@ router.post('/', function(req, res) {
     date: creationDate
   };
 
-
-  if (!validateUrl.isWebUri(config.url)) {
-    res.render('error', {
-      text: 'You need to write a valid url',
-      title: 'Ooops you need to have a valid URL',
-      description: ''
-    });
-    return;
-  }
 
   // create the path to the result
 

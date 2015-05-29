@@ -6,22 +6,9 @@
 <div id="page">
   <div id="content">
     <h1 id="box-title">{{text}}</h1>
-    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+    <p>The URL {{url}} couldn't be tested correctly. Can you access it? We have logged the problem but sometimes we have a lot to take care of so if you really want to help us out, <a href="https://github.com/sitespeedio/run.sitespeed.io/issues/new">create a
+      issue</a> at Github with the URL that you where testing and the error so we can backtrack it. Thanks a lot!
     </p>
-    <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-    of Lorem Ipsum.
-    </p>
-    <p>
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-    its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-    opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
-    packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
-    uncover many web sites still in their i</p>
+
   </div>
 </div>

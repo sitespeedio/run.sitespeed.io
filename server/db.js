@@ -27,6 +27,12 @@ var pool = mysql.createPool({
   database: 'sitespeedio'
 });
 
+var NodeCache = require("node-cache");
+var cache = new NodeCache({
+  stdTTL: 10,
+  checkperiod: 600
+});
+
 module.exports = {
   storeRun: function(url, id, ip, creationDate, browser, location, cb) {
 
@@ -60,29 +66,41 @@ module.exports = {
 
   },
   getStatus: function(id, cb) {
-    pool.getConnection(function(err, connection) {
-      if (err) {
-        return cb(err);
-      }
 
-      var post = {
-        testId: id
-      };
-      var query = connection.query('SELECT status, created, url FROM runs WHERE ?', post, function(error, results, fields) {
-        if (error) {
-          log.error('Couldn\'t get status from the the database', query.sql, post, error);
-          cb(error);
-        } else {
-          if (results && results[0]) {
-            cb(null, results[0].status, results[0].created, results[0].url);
-          } else {
-            // ooops we should return a error here
-            cb();
+    cache.get(id, function(err, value) {
+
+      if (value != undefined) {
+        cb(null, value.status, value.created, value.url);
+      } else {
+        pool.getConnection(function(err, connection) {
+          if (err) {
+            return cb(err);
           }
-        }
-        connection.release();
-      });
 
+          var post = {
+            testId: id
+          };
+          var query = connection.query('SELECT status, created, url FROM runs WHERE ?', post, function(
+            error, results, fields) {
+            if (error) {
+              log.error('Couldn\'t get status from the the database', query.sql, post, error);
+              cb(error);
+            } else {
+              if (results && results[0]) {
+
+                cache.set(id, results[0], function(err, success) {
+                  cb(null, results[0].status, results[0].created, results[0].url);
+                });
+              } else {
+                // ooops we should return a error here
+                cb();
+              }
+            }
+            connection.release();
+          });
+
+        });
+      }
     });
   }
 };

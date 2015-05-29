@@ -94,7 +94,7 @@ var showCats = true;
 
   }
 
-  setInterval(function(){getACat(new Date())}, 10000);
+  setInterval(function(){getACat(new Date())}, 15000);
   </script>
   <style>
   {{> css}}

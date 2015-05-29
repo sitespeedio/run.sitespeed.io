@@ -23,7 +23,8 @@ router.get('/:sessionId', function(req, res) {
 			log.error(err);
 			res.render('failed', {
 				layout: 'main',
-				bodyId: 'extra'
+				bodyId: 'extra',
+				url: url
 			});
 			return;
 		}
@@ -41,12 +42,23 @@ router.get('/:sessionId', function(req, res) {
 				bodyId: 'extra',
 				url: url
 			});
-		} else {
+		}
+		else if (status === 'waiting') {
+			res.render('running-waiting', {
+				status: status,
+				layout: 'running',
+				'id': sessionId,
+				bodyId: 'process',
+				url: url
+			});
+		}
+		else {
 			res.header("Cache-Control", "no-cache, no-store, must-revalidate");
 			res.header("Pragma", "no-cache");
 			res.header("Expires", 0);
 			res.render('running', {
 				status: status,
+				statusText: getStatusText(status),
 				layout: 'running',
 				'id': sessionId,
 				bodyId: 'process',
@@ -56,5 +68,21 @@ router.get('/:sessionId', function(req, res) {
 	});
 
 });
+
+function getStatusText(status) {
+	var display = 'Testing your site';
+	if (status === 'waiting') {
+		display = 'Waiting in line';
+	} else if (status === 'uploading') {
+		display = 'Uploading the result';
+	} else if (status === 'crawling') {
+		display = 'Crawling the site';
+	} else if (status.indexOf('analyzing')>-1) {
+		display = 'Analyzing page ' + status.slice(9,10);
+	} else if (status.indexOf('measuring')>-1) {
+		display = 'Collecting timing metrics for page ' +  status.slice(9,10);
+	}
+	return display;
+}
 
 module.exports = router;
