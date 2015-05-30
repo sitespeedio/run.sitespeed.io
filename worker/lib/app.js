@@ -23,16 +23,17 @@ var RSMQWorker = require('rsmq-worker'),
 
 
 var logLevel = process.env.LOG_LEVEL || 'info';
-var logFile = process.env.LOG_FILE || 'worker.log';
+var logFile = process.env.LOG_FILE ||  'worker.log';
 
 var args = process.argv.slice(2);
+var analyzeInProgress = false;
 
 log.add(log.transports.File, {
   filename: logFile,
   handleExceptions: true,
   level: logLevel,
   json: false
-  });
+});
 
 if (args.length !== 2) {
   log.info('Usage: node worker.js <FETCH_QUEUE_NAME> <DATA_DIR>');
@@ -67,9 +68,10 @@ var resultWorker = new RSMQWorker(resultQueue, options);
 fetchWorker.on('message', function(msg, next) {
   // got an message, lets parse it
   var mess = JSON.parse(msg);
-
+  analyzeInProgress = true;
   startJob(mess, function() {
     next();
+    analyzeInProgress = false;
   });
 });
 
@@ -77,26 +79,43 @@ fetchWorker.on('error', function(err, msg) {
   log.error('Error fetching message ' + msg.id, err);
 });
 
+process.on('SIGTERM', function() {
+
+  log.info('Got shutting singnal from SIGTERM');
+  fetchWorker.stop();
+
+  async.whilst(
+    function() {
+      return analyzeInProgress;
+    },
+    function(callback) {
+      setTimeout(callback, 1000);
+    },
+    function(err) {
+      log.info('Exiting from SIGTERM, no jobs running');
+      process.exit(0);
+    }
+  );
+});
+
 async.series([
-    function(callback){
+    function(callback) {
       log.info('Pull the container');
-      docker.pull(function(err){
+      docker.pull(function(err) {
         if (!err) {
           log.info('Finished pulling the container');
         }
         callback(err);
-        }
-      );
+      });
     }
-],
+  ],
 
-function(err, results){
-  if (err) {
-  } else {
-    log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
-    fetchWorker.start();
-  }
-});
+  function(err, results) {
+    if (err) {} else {
+      log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
+      fetchWorker.start();
+    }
+  });
 
 
 function startJob(message, cb) {
@@ -118,7 +137,7 @@ function startJob(message, cb) {
     deepth: message.d || 1,
     outputPath: outputPath,
     dataDir: dataDir,
-    id:  message.id
+    id: message.id
   };
 
   var metrics = {};
@@ -144,7 +163,9 @@ function startJob(message, cb) {
           callback(err);
         }
         if (json) {
-          var metricNamesToFetch = ['ruleScore','speedIndex','domContentLoadedTime','domInteractiveTime','firstPaint','pageLoadTime','backEndTime','frontEndTime'];
+          var metricNamesToFetch = ['ruleScore', 'speedIndex', 'domContentLoadedTime', 'domInteractiveTime',
+            'firstPaint', 'pageLoadTime', 'backEndTime', 'frontEndTime'
+          ];
 
           json.forEach(function(aggregate) {
             if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
@@ -193,7 +214,8 @@ function startJob(message, cb) {
         });
       },
       function(callback) {
-        fs.copy(path.join(__dirname, '../assets/'), path.join(dataDir, 'sitespeed-result', outputPath), function (err) {
+        fs.copy(path.join(__dirname, '../assets/'), path.join(dataDir, 'sitespeed-result', outputPath), function(
+          err) {
           if (err) {
             log.error('Error copying files ', err);
           }
