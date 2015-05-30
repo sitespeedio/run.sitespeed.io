@@ -98,3 +98,9 @@ var server = app.listen(serverPort, function() {
 
   log.info('Web app listening at http://%s:%s', host, port);
 });
+
+process.on('SIGTERM', function () {
+  server.close(function () {
+    process.exit(0);
+  });
+});
