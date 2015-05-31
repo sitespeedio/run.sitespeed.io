@@ -29,7 +29,7 @@ var pool = mysql.createPool({
 
 var NodeCache = require("node-cache");
 var cache = new NodeCache({
-  stdTTL: 10,
+  stdTTL: 4,
   checkperiod: 600
 });
 
