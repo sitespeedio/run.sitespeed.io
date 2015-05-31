@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generate more at customizr.net -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg id="facebook-square" class="custom-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" style="height:100px;width:100px;"><circle style="opacity: 1; fill: rgb(59, 89, 152);" class="outer-shape" cx="50" cy="50" r="48"></circle>
-	<path class="inner-shape" style="opacity:1;fill:#f7f7f7;" transform="translate(25,25) scale(0.5)" d="M82.667,1H17.335C8.351,1,1,8.351,1,17.336v65.329c0,8.99,7.351,16.335,16.334,16.335h65.332 C91.652,99.001,99,91.655,99,82.665V17.337C99,8.353,91.652,1.001,82.667,1L82.667,1z M84.318,50H68.375v42.875H50V50h-8.855V35.973 H50v-9.11c0-12.378,5.339-19.739,19.894-19.739h16.772V22.3H72.967c-4.066-0.007-4.57,2.12-4.57,6.078l-0.023,7.594H86.75 l-2.431,14.027V50z"></path>
-</svg>
-
+<svg class="custom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="height:100px;width:100px"><circle class="outer-shape" cx="50" cy="50" r="48" fill="#3B5998"/><path class="inner-shape" d="M66.334 25.5H33.668c-4.492 0-8.168 3.676-8.168 8.168v32.664c0 4.496 3.675 8.168 8.167 8.168h32.666c4.493 0 8.167-3.672 8.167-8.167V33.67c0-4.493-3.674-8.17-8.166-8.17zM67.16 50h-7.973v21.438H50V50h-4.428v-7.014H50v-4.554c0-6.19 2.67-9.87 9.947-9.87h8.386v7.588h-6.85c-2.033-.004-2.285 1.06-2.285 3.04l-.01 3.796h9.187L67.16 50z" fill="#f7f7f7"/></svg>
