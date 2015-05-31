@@ -43,7 +43,19 @@
         "m": "Do you use a Mac and need to optimize your images? Use <a href='https://imageoptim.com/' target='_blank'>ImageOptim</a> by Kornel Lesiński, it is awesome!"
     },
     {
-      "m": "Much love love love to the Swedish Internet Foundation for funding the built of the online version of sitespeed.io"
+      "m": "Much love love love to the <a href='https://www.iis.se/english/' target='_blank'>Swedish Internet Foundation</a> for funding the first version of the online version of sitespeed.io"
+    },
+    {
+      "m": "Much love love love to the <a href='https://www.iis.se/english/' target='_blank'>Swedish Internet Foundation</a> for funding the first version of the online version of sitespeed.io"
+    },
+    {
+      "m": "Your Name Here? Yep, do you have any cool Web Performance Open Source tool/article you want to share to the world? Send <a href='https://github.com/sitespeedio/run.sitespeed.io/blob/master/server/public/texts/webperf.json' target='_blank'>a pull request</a> with your addition.  "
+    },
+    {
+      "m":"Sitespeed.io is Open Source and so is the online version. Check out the code <a href='https://github.com/sitespeedio/run.sitespeed.io' target='_blank'>here</a> and help us make it better!"
+    },
+    {
+      "m":"HTTP/2 is here, let's optimize! Check out Ilya Grigoriks great <a href='https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM/present?slide=id.p19' target='_blank'>slides</a>."
     }
   ]
 }
