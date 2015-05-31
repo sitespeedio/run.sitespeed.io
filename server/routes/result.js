@@ -20,8 +20,7 @@ router.get('/:sessionId', function(req, res) {
 	db.getStatus(sessionId, function(err, status, created, url) {
 
 		if (err) {
-			log.error(err);
-			res.render('failed', {
+			res.render('unknown', {
 				layout: 'main',
 				bodyId: 'extra',
 				url: url

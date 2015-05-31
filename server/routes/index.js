@@ -20,7 +20,7 @@ router.get('/', function(req, res) {
   res.render('home', {
     bodyId: 'start',
     title: 'Analyze your page against web performance best practice rules',
-    description: 'How fast is your site? How good does it follow web performance best practice rules? Find out by using sitespeed.io'
+    description: 'How fast is your site? How good does it follow web performance best practice rules? Find out by using sitespeed.io.'
   });
 });
 

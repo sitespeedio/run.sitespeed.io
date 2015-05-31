@@ -93,7 +93,7 @@ module.exports = {
                 });
               } else {
                 // ooops we should return a error here
-                cb();
+                cb(new Error('No data'));
               }
             }
             connection.release();

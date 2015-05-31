@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 	res.render('faq/index', {
 		layout: 'main',
 		bodyId: 'faq',
-		title: 'FAQ run.sitespeed.io',
+		title: 'FAQ',
 		description: 'Everything you need to know about testing using sitespeed.io.'
 	});
 });

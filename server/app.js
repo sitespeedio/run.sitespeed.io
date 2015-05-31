@@ -33,7 +33,8 @@ var path = require('path'),
 		filename: logFile,
 		handleExceptions: true,
 		level: logLevel,
-		json: false
+		json: false,
+    exitOnError: false
 		});
 
 var app = express();
