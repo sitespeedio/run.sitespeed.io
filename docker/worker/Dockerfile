@@ -32,4 +32,4 @@ RUN chmod +x /usr/local/bin/start.sh
 # Define additional metadata for our image.
 ENV LOG_FILE /var/log/sitespeed.io/worker.log
 VOLUME /var/lib/docker
-CMD ["wrapdocker"]
+CMD wrapdocker
