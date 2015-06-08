@@ -3,11 +3,13 @@ node_js:
 - '0.10'
 - '0.12'
 before_install:
-- "cd server; npm install; cd .."
-- "cd worker; npm install; cd .."
-- "cd result; npm install; cd .."
-
+- cd server; npm install; cd ..
+- cd worker; npm install; cd ..
+- cd result; npm install; cd ..
 script:
-- "cd server; npm run-script travis; cd .."
-- "cd worked; npm run-script travis; cd .."
-- "cd result; npm run-script travis; cd .."
+- cd server; npm run-script travis; cd ..
+- cd worked; npm run-script travis; cd ..
+- cd result; npm run-script travis; cd ..
+notifications:
+  slack:
+    secure: PYTPXNzCIp6lMgmtLFihcZzC1zds16ItF6o1kmmOA+agEsAYhlgEv//K/eQqY9rU78UDNRItETANTeC6rQ0k5GOvwDGOSgsMskq9w+YQCKh0jbBrCrABvi3PqfvgtsoXkHlKfecGF0WrSlDDcZhJU6g5R9gqA/ozeh74icAsJTzsl/oKKDfVu6hpAjfYisKz+Dm0gNgpADjbI48m9fhd4gcoroi206FlXzb3GxUmTKcmacGWsc2auEh7E5n1kdlaSCtTFs3xjMd6AJE3Cml+kyoEmIJBeccpPbzZIVKhwlRWWWzOsWFuW3JCFI0Hqxn8ucVZy+CJOgblDSnFA5gwq2wJidrU/LOss/1QOeRKHGzbL9c3rOyACMFNB7cFP4ZEE0laoCc4wVMUsNFUQK9oUwD+K/JWDr1QPzLF2puH/pLCqpQRzLDv3etj21wLuGq1TF+lIGJc4xMfmXGDQJmjWRO7oBIcOYwxORuzDfZfEbSBmtbJV+g+qsKMjI6hY/RlVnmaLiGh52QlWU/ZcU2dnV0R/Hr7uXb4tptGnkTwfb8YIqZ9eC7GQ4EKcnPja0v+qzUDP5TV4XCu6CB9AHoRd9imJDtCxzZolyv48Pejg+FO1r9yEU5v8yWEJtWE6PLjnLUKx8LBXIYy1refVJpuFssXzI88BLj6xaun479ndBY=
