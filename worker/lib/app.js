@@ -83,12 +83,14 @@ process.on('SIGTERM', function() {
 
   log.info('Got shutting singnal from SIGTERM');
   fetchWorker.stop();
+  log.info('Stopped the queue');
 
   async.whilst(
     function() {
       return analyzeInProgress;
     },
     function(callback) {
+      log.info('Waiting on analyze to finish, wait one more second:'+ analyzeInProgress);
       setTimeout(callback, 1000);
     },
     function(err) {
