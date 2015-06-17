@@ -62,6 +62,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.enable('view cache');
 
+app.disable('x-powered-by');
+
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
   extended: true
 }));
