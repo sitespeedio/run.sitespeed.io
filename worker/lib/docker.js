@@ -58,7 +58,8 @@ module.exports = {
       if (status) {
         resultWorker.send(JSON.stringify({
           id: config.id,
-          status: status
+          status: status,
+          hostname: config.hostname
         }));
       }
       return true;

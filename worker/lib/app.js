@@ -35,13 +35,14 @@ log.add(log.transports.File, {
   json: false
 });
 
-if (args.length !== 2) {
-  log.info('Usage: node worker.js <FETCH_QUEUE_NAME> <DATA_DIR>');
+if (args.length !== 3) {
+  log.info('Usage: node worker.js <FETCH_QUEUE_NAME> <DATA_DIR> <HOSTNAME>');
   process.exit(1);
 }
 
 var fetchQueue = args[0];
 var dataDir = args[1];
+var hostName = args[2];
 
 var redisHost = process.env.REDIS_HOST;
 var resultQueue = process.env.REDIS_RESULT_QUEUE;
@@ -139,7 +140,8 @@ function startJob(message, cb) {
     deepth: message.d || 1,
     outputPath: outputPath,
     dataDir: dataDir,
-    id: message.id
+    id: message.id,
+    hostname: hostName
   };
 
   var metrics = {};
@@ -150,7 +152,8 @@ function startJob(message, cb) {
       function(callback) {
         resultWorker.send(JSON.stringify({
           id: message.id,
-          status: 'running'
+          status: 'running',
+          hostname: hostName
         }));
         callback();
       },
@@ -254,13 +257,15 @@ function startJob(message, cb) {
         log.error('Sending failed message on queue for ' + message.u, err);
         resultWorker.send(JSON.stringify({
           status: 'failed',
-          id: message.id
+          id: message.id,
+          hostname: hostName
         }));
       } else {
 
         var m = {
           status: 'done',
-          id: message.id
+          id: message.id,
+          hostname: hostName
         };
 
         // push all the metrics
