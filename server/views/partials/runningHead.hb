@@ -43,13 +43,14 @@
        document.getElementById('box-title').innerHTML = display;
        if (serverResponse.status === 'done' || serverResponse.status === 'failed') {
          location.reload();
+         return;
        } else {
          oldState = serverResponse.status;
-         setTimeout(worker, 5000);
+         setTimeout(worker, 2000);
        }
      } else {
      oldState = serverResponse.status;
-     setTimeout(worker, 5000);
+     setTimeout(worker, 2000);
    }
   };
 
@@ -64,7 +65,7 @@ worker();
 
 var showCats = true;
 
-  function getACat(date) {
+  function getContent(date) {
 
     if (!showCats) {
     var xhr = new XMLHttpRequest();
@@ -93,7 +94,7 @@ var showCats = true;
 
   }
 
-  setInterval(function(){getACat(new Date())}, 15000);
+  setInterval(function(){getContent(new Date())}, 20000);
   </script>
   <style>
   {{> css}}
