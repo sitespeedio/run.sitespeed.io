@@ -64,11 +64,11 @@ module.exports = {
 			if (resp) {
 				log.debug('Message sent. ID:', resp);
 
-				rsmq.getQueueAttributes({"qname": queue}, function(err, data) {
-					log.info('We have ' + JSON.stringify(data.msgs) + ' in the queue');
+				rsmq.getQueueAttributes({"qname": queue}, function(error, data) {
+					log.debug('We have ' + JSON.stringify(data.msgs) + ' in the queue');
+					cb(err, resp, data.msgs);
 				});
 
-				cb(err, resp);
 			} else {
 				log.error('Couldn\'t send message on queue ' + queue, err);
 				cb(err);

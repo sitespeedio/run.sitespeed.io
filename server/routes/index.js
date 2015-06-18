@@ -56,7 +56,7 @@ router.post('/', function(req, res) {
   var hash = (md5(creationDate)).substring(0, 4);
   var myPath = hash + '-' + creationDate.year() + '/' + creationDate.month() + '/' + creationDate.date();
 
-  queue.add(queueName, config, sessionId, myPath, function(err, id) {
+  queue.add(queueName, config, sessionId, myPath, function(err, id, queue) {
     if (err) {
       res.redirect('/');
     } else {
