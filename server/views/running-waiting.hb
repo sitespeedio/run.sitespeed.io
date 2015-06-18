@@ -9,7 +9,7 @@
       <h1 id="box-title">Waiting in line</h1>
       <div id="randomtext">
         <p>
-        Your test has started! We will crawl your URL, pick up three pages and meausure the performance three times, so this can take a while, probably a couple of minutes. But hang tight, we will talk about performance and give you the joy of internet with help from the <a href="http://thecatapi.com/" target="_blank">Cat API</a>. <em>All links will open in a new window!</em>
+        Your test is waiting to start. We will test your URL measure your performance. Do you want to test multiple pages like a pro? Then <a href="http://www.sitespeed.io" target="_blank">download and run</a> sitespeed.io on your desktop or server. The test will take a minute or two, just hang tight, we will talk about performance and give you the joy of internet with help from the <a href="http://thecatapi.com/" target="_blank">Cat API</a>. <em>All links will open in a new window!</em>
       </p>
       </div>
       <div id="randomcats">
