@@ -6,7 +6,7 @@
     <meta http-equiv="refresh" content="30" />
   </noscript>
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/sitespeed.io-144.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/mg/ico/sitespeed.io-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/sitespeed.io-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/ico/sitespeed.io-72.png">
   <link rel="apple-touch-icon-precomposed" href="/img/ico/sitespeed.io-57.png">
   <link rel="shortcut icon" href="/img/ico/sitespeed.io.ico">
@@ -28,13 +28,13 @@
        setTimeout(worker, 5000);
      }
      else if (oldState !== 'unknown') {
-       var display = 'Testing your site';
+       var display = 'Testing your page';
        if (serverResponse.status === 'waiting') {
          display = 'Waiting in line';
        } else if (serverResponse.status === 'uploading') {
          display = 'Uploading the result';
        } else if (serverResponse.status === 'crawling') {
-         display = 'Crawling the site';
+         display = 'Fetching the URL';
        } else if (serverResponse.status === 'analyzing') {
          display = 'Analyzing performance rules';
        } else if (serverResponse.status === 'measuring') {
