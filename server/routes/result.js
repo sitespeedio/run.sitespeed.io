@@ -16,6 +16,8 @@ var router = express.Router();
 
 router.get('/:sessionId', function(req, res) {
 	var sessionId = req.params.sessionId;
+	var queueNumber = req.params.queueNumber;
+	console.log('q:' +  queueNumber);
 
 	db.getStatus(sessionId, function(err, status, created, url) {
 
@@ -48,7 +50,8 @@ router.get('/:sessionId', function(req, res) {
 				layout: 'running',
 				'id': sessionId,
 				bodyId: 'process',
-				url: url
+				url: url,
+				queueNumber: queueNumber
 			});
 		}
 		else {
@@ -76,10 +79,10 @@ function getStatusText(status) {
 		display = 'Uploading the result';
 	} else if (status === 'crawling') {
 		display = 'Crawling the site';
-	} else if (status.indexOf('analyzing')>-1) {
-		display = 'Analyzing page ' + status.slice(9,10);
-	} else if (status.indexOf('measuring')>-1) {
-		display = 'Collecting timing metrics for page ' +  status.slice(9,10);
+	} else if (status === 'analyzing') {
+		display = 'Fetching the URL';
+	} else if (status === 'measuring') {
+		display = 'Collecting timing metrics';
 	}
 	return display;
 }
