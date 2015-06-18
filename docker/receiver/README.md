@@ -26,6 +26,7 @@ run.sitespeed.io-receiver
 ~~~
 
 And start the container:
+
 ~~~
 docker run --restart="always" --name sitespeed-receiver -v /tmp:/var/log/sitespeed.io -v /root/receiver-start.sh:/home/root/scripts/start.sh -d soulgalore/run.sitespeed.io-receiver
 ~~~

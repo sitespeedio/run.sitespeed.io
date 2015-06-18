@@ -30,6 +30,7 @@ run.sitespeed.io-worker nyc /home/root/sitespeedio/ $HOSTNAME
 
 
 And start the container:
+
 ~~~
 docker run --privileged --restart="always" --name worker -v /tmp:/var/log/sitespeed.io -v /root/start.sh:/usr/local/bin/start.sh -d soulgalore/run.sitespeed.io-worker
 ~~~
