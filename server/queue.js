@@ -57,6 +57,7 @@ module.exports = {
 				c: config.connection,
 				m: config.maxPagesToTest,
 				n: config.numberOfRuns,
+				d: 0,
 				date: config.date.format('YYYY-MM-DD HH:mm:ss')
 			})
 		}, function(err, resp) {

@@ -35,7 +35,6 @@ module.exports = {
   run: function(config, resultWorker,  cb) {
 
     var myStream = new stream.Stream();
-    var page = 1;
     myStream.writable = true;
     myStream.write = function(data) {
       log.debug(data);
@@ -44,15 +43,10 @@ module.exports = {
       if (data.indexOf('Will crawl') > -1) {
           status = 'crawling';
       } else if (data.indexOf('Running YSlow') > -1 ) {
-        status = 'analyzing' + page;
-        page +=1;
-        if (page === 4) {
-          page = 1;
-        }
+        status = 'analyzing';
       }
       else if (data.indexOf('Running browsertime') > -1) {
-        status =  'measuring' + page;
-        page +=1;
+        status =  'measuring';
       }
 
       if (status) {

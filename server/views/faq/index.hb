@@ -9,7 +9,7 @@
 
     <h2>What happens when you test my site?</h2>
 
-    <p>Sitespeed.io will start by crawling your site (the online version limits the number of tested pages to three, run your own instance to test more pages). Then each page is tested against web performance best practice rules using <a href="http://phantomjs.org/">PhantomJS</a>. After that each page is tested three times (run it yourself to increase number of runs) in the browser of your choice and timings are collected.
+    <p>Sitespeed.io will test one page (the online version limits the number of tested pages to just one, run your own instance to test more pages). Then each page is tested against web performance best practice rules using <a href="http://phantomjs.org/">PhantomJS</a>. After that each page is tested one time (run it yourself to increase number of runs) in the browser of your choice and timings are collected.
     </p>
 
     <h2>Hey I want to test more pages of my site, how do I do that?</h2>
