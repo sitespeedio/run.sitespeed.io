@@ -187,7 +187,7 @@ function startJob(message, cb) {
           id: message.id,
           url: config.url,
           browser: config.browser,
-          location: fetchQueue,
+          location: util.getLocation(fetchQueue),
           connection: config.connection,
           link: 'index2.html',
           myUrl: 'http://results.sitespeed.io/' + outputPath + '/',
