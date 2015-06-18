@@ -36,7 +36,7 @@
        } else if (serverResponse.status === 'crawling') {
          display = 'Crawling the site';
        } else if (serverResponse.status === 'analyzing') {
-         display = 'Analyzing performance rules');
+         display = 'Analyzing performance rules';
        } else if (serverResponse.status === 'measuring') {
          display = 'Collecting timing metrics';
        }
@@ -94,7 +94,7 @@ var showCats = true;
 
   }
 
-  setInterval(function(){getContent(new Date())}, 20000);
+  setInterval(function(){getContent(new Date())}, 15000);
   </script>
   <style>
   {{> css}}
