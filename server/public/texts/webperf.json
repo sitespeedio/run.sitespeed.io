@@ -4,7 +4,7 @@
       "m":"We love <a href=\"http://www.webpagetest.org\" target=\"blank\" >WebPageTest</a>! It's another super cool Open Source tool created by <a href='https://twitter.com/patmeenan' target='_blank'>Patrick Meenan</a>."
     },
     {
-      "m":"Do you want to know more about web performance? Checkout the hash tags <a href=\"https://twitter.com/search?q=webperf\">#webperf</a> and <a href=\"https://twitter.com/search?q=perfmatters\">#perfmatters</a> on Twitter."
+      "m":"Do you want to know more about web performance? Checkout the hash tags <a href='https://twitter.com/search?q=webperf' target='_blank'>#webperf</a> and <a href='https://twitter.com/search?q=perfmatters' target='_blank'>#perfmatters</a> on Twitter."
     },
     {
       "m":"Have you read Steve Souders blog post about how to measure <a href='http://www.stevesouders.com/blog/2015/05/12/hero-image-custom-metrics/'>the load time of your hero image</a>?"
@@ -16,7 +16,7 @@
       "m":"Read the story <a href='http://www.peterhedenskog.com/blog/2015/02/building-a-new-sitespeed.io/' target='_blank'>how sitespeed.io was built</a>."
     },
     {
-      "m":"Want to continously test your site? Test the <a href='http://www.peterhedenskog.com/blog/2015/04/open-source-performance-dashboard/'>Open Source Web Performance Dashboard</a>."
+      "m":"Want to continously test your site? Test the <a href='http://www.peterhedenskog.com/blog/2015/04/open-source-performance-dashboard/' target='_blank'>Open Source Web Performance Dashboard</a>."
     },
     {
       "m":"Want to know more about how to foster a culture around web performance in organizations? Checkout Katie Kovalcin and Tim Kadlec podcast <a href='http://pathtoperf.com/' target='_blank'>Path To Performance</a>."
