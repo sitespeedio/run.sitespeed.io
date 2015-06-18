@@ -48,6 +48,9 @@ module.exports = {
     } else if (queueName === 'amsterdam') {
       return 'Amsterdam';
     }
+    else {
+      return '';
+    }
   }
 
 };
