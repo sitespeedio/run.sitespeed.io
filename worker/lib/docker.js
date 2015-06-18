@@ -62,6 +62,8 @@ module.exports = {
     myStream.end = function(data) {
     };
 
+    log.debug('Config:' + JSON.stringify(config));
+
     docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
       '-d', '' + config.deepth,
       '--browser', config.browser, '--no', '' + config.no, '--outputFolderName', config.outputPath,
