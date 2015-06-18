@@ -9,6 +9,7 @@
 
 var Docker = require('dockerode'),
   log = require('winston'),
+  util = require('util'),
   stream = require('stream');
 
 var docker = new Docker(); // NOTE must have DOCKER_HOST env variable set in shell
@@ -62,8 +63,6 @@ module.exports = {
     myStream.end = function(data) {
     };
 
-    log.debug('Config:' + JSON.stringify(config));
-
     docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
       '-d', '' + config.deepth,
       '--browser', config.browser, '--no', '' + config.no, '--outputFolderName', config.outputPath,
@@ -71,6 +70,9 @@ module.exports = {
       '--seleniumServer', 'http://127.0.0.1:4444/wd/hub', '--phantomjsPath',
       '/usr/local/phantomjs/bin/phantomjs'
     ], myStream, function(err, data, container) {
+      if (err) {
+        log.error('Error:' + util.inspect(err));
+      }
       cb(err);
     }).on('container', function(container) {
       container.defaultOptions.start.Binds = [config.dataDir + ':/sitespeed.io:rw'];

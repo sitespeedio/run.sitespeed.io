@@ -137,7 +137,7 @@ function startJob(message, cb) {
     connection: message.c,
     maxPagesToTest: message.m || 1,
     no: message.n || 1,
-    deepth: message.d || 1,
+    deepth: message.d || 0,
     outputPath: outputPath,
     dataDir: dataDir,
     id: message.id,
