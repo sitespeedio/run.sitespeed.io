@@ -35,10 +35,10 @@
          display = 'Uploading the result';
        } else if (serverResponse.status === 'crawling') {
          display = 'Crawling the site';
-       } else if (serverResponse.status.indexOf('analyzing')>-1) {
-         display = 'Analyzing page ' + serverResponse.status.slice(9,10);
-       } else if (serverResponse.status.indexOf('measuring')>-1) {
-         display = 'Collecting timing metrics for page ' +  serverResponse.status.slice(9,10);
+       } else if (serverResponse.status === 'analyzing') {
+         display = 'Analyzing performance rules');
+       } else if (serverResponse.status === 'measuring') {
+         display = 'Collecting timing metrics';
        }
        document.getElementById('box-title').innerHTML = display;
        if (serverResponse.status === 'done' || serverResponse.status === 'failed') {

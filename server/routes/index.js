@@ -45,8 +45,8 @@ router.post('/', function(req, res) {
     url: req.body.url.toLowerCase(),
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
-    maxPagesToTest: 3,
-    numberOfRuns: 3,
+    maxPagesToTest: 1,
+    numberOfRuns: 1,
     date: creationDate
   };
 
