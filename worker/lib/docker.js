@@ -63,8 +63,10 @@ module.exports = {
     myStream.end = function(data) {
     };
 
+    log.info('My config:' + JSON.stringify(config));
+
     docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
-      '-d', '' + config.deepth,
+      '-d', '' + config.deep,
       '--browser', config.browser, '--no', '' + config.no, '--outputFolderName', config.outputPath,
       '--suppressDomainFolder', '--connection', config.connection,
       '--seleniumServer', 'http://127.0.0.1:4444/wd/hub', '--phantomjsPath',
