@@ -205,7 +205,7 @@ function startJob(message, cb) {
         generateHtml.generate(path.join(dataDir, 'sitespeed-result', outputPath), data, callback);
       },
       function(callback) {
-        var files = ['data', 'config.json', 'sitespeed.io.log', 'browsermobproxy.log', 'browsertime.log'];
+        var files = ['data/browsertime','data/yslow','data/summary.json'.'data/urls.txt', 'config.json', 'sitespeed.io.log', 'browsermobproxy.log', 'browsertime.log'];
 
         async.each(files, function(file, thecb) {
           fs.remove(path.join(dataDir, 'sitespeed-result', outputPath, file), thecb);
