@@ -33,7 +33,7 @@ router.get('/:sessionId', function(req, res) {
 			var date = moment(created);
 			var hash = (md5(date)).substring(0, 4);
 			var myPath = hash + '-' + date.year() + '/' + date.month() + '/' + date.date();
-			res.redirect('http://results.sitespeed.io/' + myPath + '/' + sessionId + '/index.html');
+			res.redirect('https://results.sitespeed.io/' + myPath + '/' + sessionId + '/index.html');
 
 		} else if (status === 'failed') {
 			res.render('failed', {
