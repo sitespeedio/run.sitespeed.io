@@ -18,7 +18,7 @@ var docker = new Docker(); // NOTE must have DOCKER_HOST env variable set in she
 module.exports = {
 
   pull: function(cb) {
-    docker.pull('sitespeedio/sitespeed.io:canary', function(err, stream) {
+    docker.pull('sitespeedio/sitespeed.io', function(err, stream) {
       docker.modem.followProgress(stream, onFinished, onProgress);
 
       function onFinished(err, output) {
@@ -63,7 +63,7 @@ module.exports = {
     myStream.end = function(data) {
     };
 
-    docker.run('sitespeedio/sitespeed.io:canary', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
+    docker.run('sitespeedio/sitespeed.io', ['sitespeed.io', '--url', config.url, '--maxPagesToTest', '' + config.maxPagesToTest,
       '-d', '' + config.deep,
       '--browser', config.browser, '--no', '' + config.no, '--outputFolderName', config.outputPath,
       '--suppressDomainFolder', '--connection', config.connection,
