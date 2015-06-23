@@ -6,7 +6,7 @@
           <input id="analyze-url" name="url" type="text" required pattern="https?://.+"  placeholder="http(s)://" title="Add a URL starting with http(s)://">
 
           <label><span>Browser:</span> <select name="browser">
-            <option value="firefox">Firefox [38]</option>
+            <option value="firefox" selected>Firefox [38]</option>
             <option value="chrome">Chrome [43]</option>
           </select></label>
           <label><span>Location:</span> <select name="location">
@@ -17,7 +17,7 @@
           <label><span>Connection type:</span> <select name="connection">
             <option value="mobile3g">mobile3g</option>
             <option value="mobile3gfast">mobile3g fast</option>
-            <option value="cable">cable</option>
+            <option value="cable" selected>cable</option>
             <option value="native">native</option>
           </select></label>
           <input type="submit" value="Start analyzing">
