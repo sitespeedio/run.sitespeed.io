@@ -22,7 +22,12 @@ router.get('/status/:sessionId', function(req, res) {
 	var sessionId = req.params.sessionId;
 	log.debug('API access for ' + sessionId);
 	db.getStatus(sessionId, function(err, status) {
-		if (err) {
+
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.header("Pragma", "no-cache");
+    res.header("Expires", 0);
+
+    if (err) {
 			log.error(err);
 			res.json({
 				status: 'unknown'
