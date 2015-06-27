@@ -21,6 +21,7 @@ var path = require('path'),
   dashboard = require('./routes/dashboard'),
   faq = require('./routes/faq'),
   log = require('winston'),
+  cookieParser = require('cookie-parser'),
   sponsors = require('./routes/sponsors'),
   result = require('./routes/result');
 
@@ -50,6 +51,7 @@ var minify = expressMinify.minify({
 app.use(compress());
 app.use(responseTime());
 app.use(minify);
+app.use(cookieParser());
 
 app.engine('.hb', handlebars({
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
