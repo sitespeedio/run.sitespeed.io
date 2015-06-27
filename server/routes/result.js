@@ -16,8 +16,7 @@ var router = express.Router();
 
 router.get('/:sessionId', function(req, res) {
 	var sessionId = req.params.sessionId;
-	var queueNumber = req.params.queueNumber;
-	console.log('q:' +  queueNumber);
+	var queueNumber = req.cookies.ssioqueue;
 
 	db.getStatus(sessionId, function(err, status, created, url) {
 

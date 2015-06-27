@@ -7,10 +7,10 @@
   <div id="page">
     <div id="content">
       <h1 id="box-title">{{statusText}}</h1>
-      <div id="randomtext">
-      </div>
       <div id="randomcats">
         <img src="//thecatapi.com/api/images/get?format=src&type=gif" id="result">
+      </div>
+      <div id="randomtext">
       </div>
     </div>
   </div>
