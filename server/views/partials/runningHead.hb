@@ -28,6 +28,11 @@
        setTimeout(worker, 5000);
      }
      else if (oldState !== 'unknown') {
+
+       if (oldState === 'waiting') {
+        document.getElementById('randomtext').innerHTML = '<p>Your test has started. It will finish in a couple of minutes. Leave your browser window open and just relax.</p>';        
+       }
+
        var display = 'Testing your page';
        if (serverResponse.status === 'waiting') {
          display = 'Waiting in line';
