@@ -20,7 +20,7 @@ if (!host || !password || !user) {
 }
 
 var pool = mysql.createPool({
-  connectionLimit: 10,
+  connectionLimit: 20,
   host: host,
   user: user,
   password: password,
