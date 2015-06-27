@@ -1,7 +1,7 @@
 {
   "messages": [
     {
-      "m":"We love <a href=\"http://www.webpagetest.org\" target=\"blank\" >WebPageTest</a>! It's another super cool Open Source tool created by <a href='https://twitter.com/patmeenan' target='_blank'>Patrick Meenan</a>."
+      "m":"We love <a href=\"http://www.webpagetest.org\" target=\"blank\" >WebPageTest</a>! It's a super cool Open Source web performance tool created by <a href='https://twitter.com/patmeenan' target='_blank'>Patrick Meenan</a>."
     },
     {
       "m":"Do you want to know more about web performance? Checkout the hash tags <a href='https://twitter.com/search?q=webperf' target='_blank'>#webperf</a> and <a href='https://twitter.com/search?q=perfmatters' target='_blank'>#perfmatters</a> on Twitter."
@@ -13,7 +13,7 @@
       "m":"Stefan Judis & Marco Biedermann runs <a href='http://perf-tooling.today/'>Perf Tooling Today</a> - a collection of resources which will help you to improve your workflow and to deliver better and faster websites."
     },
     {
-      "m":"Read the story <a href='http://www.peterhedenskog.com/blog/2015/02/building-a-new-sitespeed.io/' target='_blank'>how sitespeed.io was built</a>."
+      "m":"Have you read the story about <a href='http://www.peterhedenskog.com/blog/2015/02/building-a-new-sitespeed.io/' target='_blank'>sitespeed.io</a>?"
     },
     {
       "m":"Want to continously test your site? Test the <a href='http://www.peterhedenskog.com/blog/2015/04/open-source-performance-dashboard/' target='_blank'>Open Source Web Performance Dashboard</a>."
@@ -34,7 +34,7 @@
       "m":"Steve Souders is the Godfather of web performance. Make sure you check out his <a href='https://www.stevesouders.com/blog/' target='_blank'>blog</a>!"
     },
     {
-      "m":"Wesley Hales created <a href='http://speedgun.io' target='_blank'>speedgun.io</a> -  another cool Open Source web performance tool."
+      "m":"Wesley Hales created <a href='http://speedgun.io' target='_blank'>speedgun.io</a> -  a really cool Open Source web performance tool!"
     },
     {
       "m":"Read the excellent posts by Tim Kadlec about <a href='http://timkadlec.com/2013/01/setting-a-performance-budget/' target='_blank'>Setting a performance budget</a> and <a href='http://timkadlec.com/2014/01/fast-enough/' target='_blank'>Fast enough</a>."
@@ -49,7 +49,7 @@
       "m": "Much love love love to the <a href='https://www.iis.se/english/' target='_blank'>Swedish Internet Foundation</a> for funding the first version of the online version of sitespeed.io"
     },
     {
-      "m": "Your Name Here? Yep, do you have any cool Web Performance Open Source tool/article you want to share to the world? Send <a href='https://github.com/sitespeedio/run.sitespeed.io/blob/master/server/public/texts/webperf.json' target='_blank'>a pull request</a> with your addition.  "
+      "m": "Your Name Here? Yep, do you have any cool Web Performance Open Source tool/article you want to share to the world? Send <a href='https://github.com/sitespeedio/run.sitespeed.io/blob/master/server/public/texts/webperf.json' target='_blank'>a pull request</a> with your addition."
     },
     {
       "m":"Sitespeed.io is Open Source and so is the online version. Check out the code <a href='https://github.com/sitespeedio/run.sitespeed.io' target='_blank'>here</a> and help us make it better!"
