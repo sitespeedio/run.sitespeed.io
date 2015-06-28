@@ -11,7 +11,7 @@
     </p>
 
     <h2>More sponsors</h2>
-    <p>The money from the Internet Infrastructure Foundation is since long time gone and we are looking for sponsors to keep the site up and running. We would love to be able to test more than one page per site and collect metrics at least 3 times per URL. If you are interested, <a href="https://twitter.com/soulislove">tweet me</a> or drop me a <a href="mailto:peter[AT]sougalore[dot]com">email</a> and let us fix it.
+    <p>The money from the Internet Infrastructure Foundation is since long time gone and we are looking for sponsors (it's important that you are a true believer in Open Source) to keep the site up and running. We would love to be able to test more than one page per site and collect metrics at least 3 times per URL. If you are interested, <a href="https://twitter.com/soulislove">tweet me</a> or drop me a <a href="mailto:peter[AT]sougalore[dot]com">email</a> and let us work something out.
     </p>
   </div>
 </div>
