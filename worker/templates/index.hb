@@ -5,13 +5,13 @@
     <meta name="viewport" content="initial-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Sitespeed.io results for {{url}}</title>
-    <meta name="description" content="Test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}">
+    <meta name="description" content="Test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.">
     <meta name="keywords" content="sitespeed.io, wpo, webperf, perfmatters, performance">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/sitespeed.io-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/sitespeed.io-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/ico/sitespeed.io-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/img/ico/sitespeed.io-57.png">
-    <link rel="shortcut icon" href="/img/ico/sitespeed.io.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/sitespeed.io-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/sitespeed.io-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/sitespeed.io-72.png">
+    <link rel="apple-touch-icon-precomposed" href="img/ico/sitespeed.io-57.png">
+    <link rel="shortcut icon" href="img/ico/sitespeed.io.ico">
   </head>
   <body id="{{bodyId}}" class="resultpage">
   <script>
@@ -39,6 +39,8 @@
 
           <p class="result-test-info">
             Test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.
+          </p>
+          <p class="result-test-info">{{boxDesciption}}
           </p>
 
           <p class="result-user-agent">

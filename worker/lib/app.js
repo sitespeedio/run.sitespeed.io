@@ -186,7 +186,7 @@ function startJob(message, cb) {
         var data = {
           id: message.id,
           url: config.url,
-          browser: config.browser,
+          browser: util.capitalize(config.browser),
           location: util.getLocation(fetchQueue),
           connection: config.connection,
           link: 'index2.html',
@@ -194,7 +194,8 @@ function startJob(message, cb) {
           stars: util.getStars(message.c, metrics.ruleScore, metrics.speedIndex),
           date: message.date,
           bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.speedIndex),
-          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.speedIndex)
+          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.speedIndex),
+          boxDesciption: util.getBoxDescription(message.c, metrics.ruleScore, metrics.speedIndex)
         };
 
         // push the metrics

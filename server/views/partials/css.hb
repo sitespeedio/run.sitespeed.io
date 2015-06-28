@@ -267,6 +267,10 @@ padding-bottom: 10px;
     color:#468847;
 }
 
+#hero #stars{
+    color:#468847;
+}
+
 #share{
     overflow:hidden;
     padding:0;
@@ -392,8 +396,8 @@ padding-bottom: 10px;
         background: transparent url('../img/cat/cat_good_result.svg') 0 0 / contain no-repeat;
     }
 
-    #great-result #page:before {
-        background: transparent url('../img/cat/cat_great_result.svg') 0 0 / contain no-repeat;
+    #hero #page:before {
+        background: transparent url('../img/cat/captainSitespeed.io.svg') 0 0 / contain no-repeat;
     }
 
     #top {
@@ -606,6 +610,10 @@ padding-bottom: 10px;
 
     #great-result h1#box-title:after {
         background: transparent url('../img/cat/cat_great_result.svg') center 0 / contain no-repeat;
+    }
+
+    #hero h1#box-title:after {
+        background: transparent url('../img/cat/captainSitespeed.io.svg') center 0 / contain no-repeat;
     }
 
     /* Analyze */

@@ -252,6 +252,10 @@ input[type="submit"], button{
     color:#468847;
 }
 
+#hero #stars{
+    color:#468847;
+}
+
 #share{
     overflow:hidden;
     padding:0;
@@ -373,6 +377,10 @@ input[type="submit"], button{
 
     #great-result #page:before {
         background: transparent url('../img/cat/cat_great_result.svg') 0 0 / contain no-repeat;
+    }
+
+    #hero #page:before {
+        background: transparent url('../img/cat/captainSitespeed.io.svg') 0 0 / contain no-repeat;
     }
 
     #top {
@@ -570,9 +578,9 @@ input[type="submit"], button{
 
     h1#box-title:after {
         content: "";
-        height: 30vw;
+        height: 25vw;
         display: block;
-        width: 30vw;
+        width: 25vw;
         margin:10px;
         float:right;
     }
@@ -609,6 +617,10 @@ input[type="submit"], button{
         background: transparent url('../img/cat/cat_great_result.svg') center 0 / contain no-repeat;
     }
 
+    #hero h1#box-title:after {
+        background: transparent url('../img/cat/captainSitespeed.io.svg') center 0 / contain no-repeat;
+    }
+
     /* Analyze */
 
     #analyze-form {
@@ -631,7 +643,7 @@ input[type="submit"], button{
     }
 
     #stars{
-        font-size:9vw;
+        font-size:8vw;
     }
 
     .result-button{

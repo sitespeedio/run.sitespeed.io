@@ -21,7 +21,10 @@ module.exports = {
     return '&#9733;';
   },
   getBodyId: function(connection, score, speedIndex) {
-    if (score > 90 && speedIndex < 1000) {
+    if (score > 95 && speedIndex < 700) {
+      return 'hero';
+    }
+    else if (score > 90 && speedIndex < 1000) {
       return 'great-result';
     } else if (speedIndex > 5000) {
       return 'bad-result';
@@ -31,7 +34,10 @@ module.exports = {
     return 'bad-result';
   },
   getBoxTitle: function(connection, score, speedIndex) {
-    if (score > 90 && speedIndex < 1000) {
+    if (score > 95 && speedIndex < 700) {
+      return 'Wow HERO performance!';
+    }
+    else if (score > 90 && speedIndex < 1000) {
       return 'Great performance!';
     } else if (speedIndex > 5000) {
       return 'You can do better!';
@@ -39,6 +45,19 @@ module.exports = {
       return 'Solid performance!';
     }
     return 'You can do better!';
+  },
+  getBoxDescription: function(connection, score, speedIndex) {
+    if (score > 95 && speedIndex < 700) {
+      return 'Wow!!! There must be a super performance hero that helped building this site!';
+    }
+    else if (score > 90 && speedIndex < 1000) {
+      return 'This is really really good.';
+    } else if (speedIndex > 5000) {
+      return 'Yes, here we have a lot of room for improvements.';
+    } else if (score > 70) {
+      return 'The performance is OK and there are some things we can do to improve it.';
+    }
+    return 'Here we have a lot of room for improvements.';
   },
   getLocation: function(queueName) {
     if (queueName === 'nyc') {
@@ -49,6 +68,13 @@ module.exports = {
       return 'Amsterdam';
     }
     else {
+      return '';
+    }
+  },
+  capitalize: function(word) {
+    if (word) {
+      return word.substr(0, 1).toUpperCase() + word.substr(1);
+    } else {
       return '';
     }
   }
