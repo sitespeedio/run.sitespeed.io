@@ -129,6 +129,8 @@ function startJob(message, cb) {
     return;
   }
 
+  log.info('Starting testing:' + message.u);
+
   var outputPath = message.p + '/' + message.id;
 
   var config = {
@@ -268,6 +270,8 @@ function startJob(message, cb) {
           id: message.id,
           hostname: hostName
         };
+
+        log.info('Finished testing [ok]:' + message.u);
 
         // push all the metrics
         Object.keys(metrics).forEach(function(key) {
