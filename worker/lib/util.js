@@ -7,7 +7,10 @@
 'use strict';
 module.exports = {
   getStars: function(connection, score, speedIndex) {
-    if (score > 90 && speedIndex < 1000) {
+    if (score > 95 && speedIndex < 700) {
+      return '&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;';
+    }
+    else if (score > 90 && speedIndex < 1000) {
       return '&#9733;&#9733;&#9733;&#9733;&#9733;';
     } else if (speedIndex > 5000) {
       return '&#9733;';
