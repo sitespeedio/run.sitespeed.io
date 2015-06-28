@@ -48,16 +48,21 @@ module.exports = {
   },
   getBoxDescription: function(connection, score, speedIndex) {
     if (score > 95 && speedIndex < 700) {
-      return 'Wow!!! There must be a super performance hero that helped building this site!';
+      return 'Wow!!! There must be multiple super performance heroes that works on this site. The score and the speed are really great!';
     }
     else if (score > 90 && speedIndex < 1000) {
-      return 'This is really really good.';
-    } else if (speedIndex > 5000) {
-      return 'Yes, here we have a lot of room for improvements.';
-    } else if (score > 70) {
-      return 'The performance is OK and there are some things we can do to improve it.';
+      return 'Yeah this is really really good. Maybe there are some small tweaks you can do to improve the performance even more.';
+    } else if (speedIndex > 10000) {
+      return 'Well how should I say this? This seems like the worst performance we have ever seen. But don\'t worry, there\'s a lot you can do to fix it';
     }
-    return 'Here we have a lot of room for improvements.';
+    else if (speedIndex > 5000) {
+      return 'It seems there are a lot of room for improvements on this site. ';
+    } else if (score > 80) {
+      return 'The score is ok and there are some things we can do to improve it, lets checkout the full report.';
+    } else if (score < 50) {
+      return 'Hmm are site a fake site? It seems like the rule score is incredible low, you need to follow the performance best practice rules to make it faster. If this site isn\'t yours, please contact the owner and help the make the site better :)';
+    }
+    return 'There\'s a lot of room for improvements here. Make sure you follow the most important web performance best practice rules and your site will score even better.';
   },
   getLocation: function(queueName) {
     if (queueName === 'nyc') {
@@ -78,5 +83,4 @@ module.exports = {
       return '';
     }
   }
-
 };

@@ -19,7 +19,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('home', {
     bodyId: 'start',
-    title: 'Analyze your page against web performance best practice rules',
+    title: 'Analyze your page against web performance best practice rules and using metrics',
     description: 'How fast is your site? How good does it follow web performance best practice rules? Find out by using sitespeed.io.'
   });
 });

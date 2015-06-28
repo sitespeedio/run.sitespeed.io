@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Sitespeed.io results for {{url}}</title>
-    <meta name="description" content="Test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.">
+    <meta name="description" content="Web performance test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.">
     <meta name="keywords" content="sitespeed.io, wpo, webperf, perfmatters, performance">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/sitespeed.io-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/sitespeed.io-114.png">
