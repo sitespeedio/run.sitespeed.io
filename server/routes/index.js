@@ -12,6 +12,7 @@ var express = require('express'),
   moment = require('moment'),
   queue = require('../queue'),
   validateUrl = require('validator'),
+  log = require('winston'),
   db = require('../db');
 
 var router = express.Router();
@@ -28,6 +29,11 @@ router.post('/', function(req, res) {
   var queueName = req.body.location || 'nyc';
   var sessionId = uuid.v4();
   var ip = req.headers['X-Real-IP'] || req.connection.remoteAddress;
+
+  log.info('Real ip:' + req.headers['X-Real-IP']);
+  log.info('Remote address:' + req.connection.remoteAddress);
+  log.info('Forwarded:' + req.headers['x-forwarded-for']);
+  if(req.ip) log.info('req.ip:' + req.ip);
 
   if (!validateUrl.isURL(req.body.url)) {
     res.render('error', {
