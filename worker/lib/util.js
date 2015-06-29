@@ -12,7 +12,11 @@ module.exports = {
     }
     else if (score > 90 && speedIndex < 1000) {
       return '&#9733;&#9733;&#9733;&#9733;&#9733;';
-    } else if (speedIndex > 5000) {
+    }
+    else if (speedIndex < 2000) {
+      return '&#9733;&#9733;&#9733';
+    }
+    else if (speedIndex > 5000) {
       return '&#9733;';
     } else if (score > 80) {
       return '&#9733;&#9733;&#9733;&#9733;';
@@ -29,7 +33,11 @@ module.exports = {
     }
     else if (score > 90 && speedIndex < 1000) {
       return 'great-result';
-    } else if (speedIndex > 5000) {
+    }
+    else if (speedIndex < 2000) {
+        return 'good-result';
+    }
+    else if (speedIndex > 5000) {
       return 'bad-result';
     } else if (score > 70) {
       return 'good-result';
@@ -42,7 +50,11 @@ module.exports = {
     }
     else if (score > 90 && speedIndex < 1000) {
       return 'Great performance!';
-    } else if (speedIndex > 5000) {
+    }
+    else if (speedIndex < 2000) {
+        return 'Good performance!';
+    }
+    else if (speedIndex > 5000) {
       return 'You can do better!';
     } else if (score > 70) {
       return 'Solid performance!';
@@ -55,7 +67,10 @@ module.exports = {
     }
     else if (score > 90 && speedIndex < 1000) {
       return 'Yeah this is really really good. Maybe there are some small tweaks you can do to improve the performance even more.';
-    } else if (speedIndex > 10000) {
+    } else if (speedIndex < 2000) {
+        return 'Yeah this the speed is really good and it seems like you can do some work to follow performance best practice rules, that will make your site even faster.';
+    }
+    else if (speedIndex > 10000) {
       return 'Well how should I say this? This seems like the worst performance we have ever seen. But don\'t worry, there\'s a lot you can do to fix it';
     }
     else if (speedIndex > 5000) {
