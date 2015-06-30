@@ -147,7 +147,7 @@ body#start {
 }
 
 #start #content {
-    background: transparent url('../img/logos/logoBig.svg') 0 0 / 100% no-repeat;
+    background: transparent url('../img/logos/logoBig2.svg') 0 0 / 100% no-repeat;
 }
 
 #start #container {
