@@ -29,14 +29,18 @@ router.post('/', function(req, res) {
   var queueName = req.body.location || 'nyc';
   var sessionId = uuid.v4();
   var ip = req.headers['x-forwarded-for'] || req.ip;
-  
 
-  if (!validateUrl.isURL(req.body.url)) {
+  var url = req.body.url;
+  if (url != 'undefined' && url.indexOf('http') === -1) {
+    url = 'http://' + url;
+  }
+
+  if (!validateUrl.isURL(url)) {
     res.render('error', {
       text: 'The URL isn\'t valid',
       title: 'Ooops you need to have a valid URL',
       description: '',
-      url: req.body.url
+      url: url
     });
     return;
   }
@@ -44,7 +48,7 @@ router.post('/', function(req, res) {
   var creationDate = moment();
 
   var config = {
-    url: req.body.url.toLowerCase(),
+    url: url.toLowerCase(),
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
     maxPagesToTest: 1,
