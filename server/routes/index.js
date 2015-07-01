@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
     url = 'http://' + url;
   }
 
-  if (!validateUrl.isURL(url)) {
+  if (url === 'undefined' || !validateUrl.isURL(url.toLowerCase())) {
     res.render('error', {
       text: 'The URL isn\'t valid',
       title: 'Ooops you need to have a valid URL',
