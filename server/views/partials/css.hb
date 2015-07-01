@@ -16,6 +16,7 @@ div, p, a, li, td, span {
     -webkit-box-sizing: border-box;
 }
 
+
 h1 {
     font-weight: bold;
     font-size: 30px;
@@ -454,6 +455,10 @@ padding-bottom: 10px;
     }
 
     #analyze-form input[type="text"] {
+      font-size: 24px;
+    }
+
+    #analyze-form input[type="url"] {
       font-size: 24px;
     }
 

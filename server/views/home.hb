@@ -3,7 +3,7 @@
         <!--<h2>Analyze your website speed and performance:</h2>-->
 
         <form id="analyze-form" method="post" action="/">
-          <input id="analyze-url" name="url" type="text" required pattern="https?://.+"  placeholder="http(s)://" title="Add a URL starting with http(s)://">
+          <input id="analyze-url" name="url" type="url" required pattern="https?://.+"  placeholder="http(s)://" title="Add a URL starting with http(s)://">
 
           <label><span>Browser:</span> <select name="browser">
             <option value="firefox" selected>Firefox [38]</option>
