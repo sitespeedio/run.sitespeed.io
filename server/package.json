@@ -33,6 +33,7 @@
     "response-time":"2.3.1",
     "rsmq": "0.3.15",
     "validator": "3.40.0",
-    "winston":"1.0.0"
+    "winston":"1.0.0",
+    "winston-slack":"0.1.6"
   }
 }

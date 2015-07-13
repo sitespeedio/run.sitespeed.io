@@ -10,6 +10,7 @@
 'use strict';
 
 var RSMQWorker = require('rsmq-worker'),
+  logSetup = require('./log'),
   docker = require('./docker'),
   path = require('path'),
   generateHtml = require('./generateHtml'),

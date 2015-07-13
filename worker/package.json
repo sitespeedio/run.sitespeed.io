@@ -37,6 +37,7 @@
     "rsmq-worker":"0.3.2",
     "s3":"4.4.0",
     "tar.gz":"0.1.1",
-    "winston":"1.0.0"
+    "winston":"1.0.0",
+    "winston-slack":"0.1.6"
   }
 }
