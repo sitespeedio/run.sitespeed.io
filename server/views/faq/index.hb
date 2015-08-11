@@ -9,7 +9,7 @@
 
     <h2>What happens when you test my site?</h2>
 
-    <p>The online version of sitespeed.io will test one page against web performance best practice rules and fetch timing metrics using the Navigation Timing API (one time per run). That is cool and if you want to be a performance hero, you need to test your whole site. Install <a href="http://www.sitespeed.io">sitespeed.io</a> on your own machine(s) and there's no limit how many pages and how many times you can test.</p>
+    <p>The online version of sitespeed.io will test one page against web performance best practice rules and fetch timing metrics using the Navigation Timing API (one time per run). That is cool and if you want to be a performance hero, you need to test your whole site. Install <a href="https://www.sitespeed.io">sitespeed.io</a> on your own machine(s) and there's no limit how many pages and how many times you can test.</p>
 
     <h2>What is different connection types?</h2>
     <p>We use the same setup as WebPageTest.
