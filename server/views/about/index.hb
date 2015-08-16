@@ -9,7 +9,7 @@
 
     <p>Sitespeed.io is an highly configurable web performance Open Source tool that helps you analyze your website speed and performance based on performance best practices and timing metrics.</p>
 
-    <p>This is the stripped down online version that makes it possible for you to test drive sitespeed.io. It is limited by testing one page and collect timing metrics for the URL one time.</p>
+    <p>This is the stripped down online version that makes it possible for you to test drive sitespeed.io. It is limited by testing three pages and collect timing metrics for the URLs three times.</p>
 
     <p>Do you want see sitespeed.io in all its glory and use all <a href="https://www.sitespeed.io/documentation/configuration/#the-options">the features</a> you should install the commmand line version using <a href="https://www.npmjs.com/package/sitespeed.io">npm</a> or use our <a href="https://registry.hub.docker.com/repos/sitespeedio/">Docker containers</a>.</p>
 
