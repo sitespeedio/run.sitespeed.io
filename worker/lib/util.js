@@ -89,6 +89,8 @@ module.exports = {
       return 'San Francisco';
     } else if (queueName === 'amsterdam') {
       return 'Amsterdam';
+    }  else if (queueName === 'singapore') {
+      return 'Singapore';
     }
     else {
       return '';
