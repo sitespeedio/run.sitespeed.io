@@ -6,8 +6,8 @@
           <input id="analyze-url" name="url" type="url" required pattern="https?://.+"  placeholder="http(s)://" title="Add a URL starting with http(s)://">
 
           <label><span>Browser:</span> <select name="browser">
-            <option value="firefox" selected>Firefox [39]</option>
-            <option value="chrome">Chrome [44]</option>
+            <option value="firefox" selected>Firefox [41]</option>
+            <option value="chrome">Chrome [45]</option>
           </select></label>
           <label><span>Location:</span> <select name="location">
             <option value="nyc">New York [USA]</option>
