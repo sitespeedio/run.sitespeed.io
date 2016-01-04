@@ -22,12 +22,12 @@
     "name": "Tobias Lidskog"
   },
   "devDependencies": {
-    "eslint": "0.17.1"
+    "eslint": "^1.10.3"
   },
   "dependencies": {
-    "moment": "^2.10.2",
-    "mysql": "2.6.2",
-    "rsmq-worker": "0.3.2",
-    "winston": "1.0.0"
+    "moment": "^2.11.0",
+    "mysql": "^2.10.0",
+    "rsmq-worker": "^0.3.7",
+    "winston": "^2.1.1"
   }
 }
