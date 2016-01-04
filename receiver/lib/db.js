@@ -44,7 +44,7 @@ update: function (message, cb) {
     }
 
 		// TODO implement to copy data from runs to results
-		var query = connection.query(sql, post, function(e, result) {
+		var query = connection.query(sql, post, function(e) {
 			/*
 			INSERT INTO results
 			SELECT *
