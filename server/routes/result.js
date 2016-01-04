@@ -53,9 +53,9 @@ router.get('/:sessionId', function(req, res) {
 			});
 		}
 		else {
-			res.header("Cache-Control", "no-cache, no-store, must-revalidate");
-			res.header("Pragma", "no-cache");
-			res.header("Expires", 0);
+			res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+			res.header('Pragma', 'no-cache');
+			res.header('Expires', 0);
 			res.render('running', {
 				status: status,
 				statusText: getStatusText(status),
