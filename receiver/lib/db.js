@@ -40,7 +40,7 @@ update: function (message, cb) {
 
     if (err) {
       log.error('Couldn\'t get a connection from the pool', err);
-			cb();
+			return cb(err);
     }
 		else {
 		// TODO imnplement to copy data from runs to resulsts
@@ -55,7 +55,7 @@ update: function (message, cb) {
 				log.error('Couldn\'t get a update the database', query.sql, e);
 			}
 			connection.release();
-      cb();
+      cb(e);
 		});
 	}
 	});
