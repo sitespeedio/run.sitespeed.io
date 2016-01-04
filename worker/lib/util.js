@@ -7,59 +7,29 @@
 'use strict';
 module.exports = {
   getStars: function(connection, score, speedIndex) {
-    if (score > 95 && speedIndex < 700) {
-      return '&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;';
-    }
-    else if (score > 90 && speedIndex < 1000) {
-      return '&#9733;&#9733;&#9733;&#9733;&#9733;';
-    }
-    else if (speedIndex < 2000) {
-      return '&#9733;&#9733;&#9733';
-    }
-    else if (speedIndex > 5000) {
-      return '&#9733;';
-    } else if (score > 80) {
-      return '&#9733;&#9733;&#9733;&#9733;';
-    } else if (score > 70) {
-      return '&#9733;&#9733;&#9733;';
-    } else if (score > 60) {
-      return '&#9733;&#9733;';
-    }
-    return '&#9733;';
+    var n = calculateAggregatedScore(score, speedIndex);
+    return new Array(n + 1).join('&#9733;'); // 1-6 stars
   },
   getBodyId: function(connection, score, speedIndex) {
-    if (score > 95 && speedIndex < 700) {
-      return 'hero';
-    }
-    else if (score > 90 && speedIndex < 1000) {
-      return 'great-result';
-    }
-    else if (speedIndex < 2000) {
-        return 'good-result';
-    }
-    else if (speedIndex > 5000) {
-      return 'bad-result';
-    } else if (score > 70) {
-      return 'good-result';
-    }
-    return 'bad-result';
+    var ids = {
+      6: 'hero',
+      5: 'great-result',
+      4: 'good-result'
+    };
+    var n = calculateAggregatedScore(score, speedIndex);
+
+    return ids[n] || 'bad-result';
   },
   getBoxTitle: function(connection, score, speedIndex) {
-    if (score > 95 && speedIndex < 700) {
-      return 'Wow HERO performance!';
-    }
-    else if (score > 90 && speedIndex < 1000) {
-      return 'Great performance!';
-    }
-    else if (speedIndex < 2000) {
-        return 'Good performance!';
-    }
-    else if (speedIndex > 5000) {
-      return 'You can do better!';
-    } else if (score > 70) {
-      return 'Solid performance!';
-    }
-    return 'You can do better!';
+    var titles = {
+      6: 'Wow HERO performance!',
+      5: 'Great performance!',
+      4: 'Good performance!',
+      3: 'Solid performance!'
+    };
+    var n = calculateAggregatedScore(score, speedIndex);
+
+    return titles[n] || 'You can do better!';
   },
   getBoxDescription: function(connection, score, speedIndex) {
     if (score > 95 && speedIndex < 700) {
@@ -100,3 +70,25 @@ module.exports = {
     }
   }
 };
+
+function calculateAggregatedScore(ruleScore, speedIndex) {
+  if (ruleScore > 95 && speedIndex < 700) {
+    return 6;
+  }
+  else if (ruleScore > 90 && speedIndex < 1000) {
+    return 5;
+  }
+  else if (speedIndex < 2000) {
+    return 3;
+  }
+  else if (speedIndex > 5000) {
+    return 1;
+  } else if (ruleScore > 80) {
+    return 4;
+  } else if (ruleScore > 70) {
+    return 3;
+  } else if (ruleScore > 60) {
+    return 2;
+  }
+  return 1;
+}
