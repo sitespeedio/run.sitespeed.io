@@ -42,8 +42,8 @@ update: function (message, cb) {
       log.error('Couldn\'t get a connection from the pool', err);
 			return cb(err);
     }
-		else {
-		// TODO imnplement to copy data from runs to resulsts
+
+		// TODO implement to copy data from runs to results
 		var query = connection.query(sql, post, function(e, result) {
 			/*
 			INSERT INTO results
@@ -57,7 +57,6 @@ update: function (message, cb) {
 			connection.release();
       cb(e);
 		});
-	}
 	});
 }
 };
