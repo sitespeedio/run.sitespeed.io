@@ -83,7 +83,7 @@ fetchWorker.on('error', function(err, msg) {
 
 process.on('SIGTERM', function() {
 
-  log.info('Got shutting singnal from SIGTERM');
+  log.info('Got shutting signal from SIGTERM');
   fetchWorker.stop();
   log.info('Stopped the queue');
 
