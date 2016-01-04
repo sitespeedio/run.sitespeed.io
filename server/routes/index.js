@@ -12,7 +12,6 @@ var express = require('express'),
   moment = require('moment'),
   queue = require('../queue'),
   validateUrl = require('validator'),
-  log = require('winston'),
   db = require('../db');
 
 var router = express.Router();
