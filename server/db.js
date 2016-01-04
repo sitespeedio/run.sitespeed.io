@@ -27,7 +27,7 @@ var pool = mysql.createPool({
   database: 'sitespeedio'
 });
 
-var NodeCache = require("node-cache");
+var NodeCache = require('node-cache');
 var cache = new NodeCache({
   stdTTL: 4,
   checkperiod: 600
