@@ -34,10 +34,12 @@ queues.forEach(function(queue) {
 	rsmq.createQueue({
 		qname: queue
 	}, function(err, resp) {
-		if (err && err.name === 'queueExists') {
-			log.info('The queue ' + queue + ' already exists');
-		} else if (err) {
-			log.error('Couldn\'t create the queue ' + queue, err);
+		if (err) {
+			if (err.name === 'queueExists') {
+				log.info('The queue ' + queue + ' already exists');
+			} else {
+				log.error('Couldn\'t create the queue ' + queue, err);
+			}
 		} else {
 			log.info('Created queue ' + queue);
 		}
