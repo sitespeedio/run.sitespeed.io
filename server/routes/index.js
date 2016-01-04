@@ -8,7 +8,7 @@
 
 var express = require('express'),
   uuid = require('node-uuid'),
-  md5 = require('MD5'),
+  md5 = require('md5'),
   moment = require('moment'),
   queue = require('../queue'),
   validateUrl = require('validator'),

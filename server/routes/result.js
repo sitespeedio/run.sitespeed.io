@@ -8,7 +8,7 @@
 
 var express = require('express'),
 db = require('../db'),
-md5 = require('MD5'),
+md5 = require('md5'),
 moment = require('moment');
 
 var router = express.Router();
