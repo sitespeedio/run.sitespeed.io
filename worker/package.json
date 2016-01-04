@@ -21,23 +21,23 @@
   "contributors": {
     "name": "Tobias Lidskog"
   },
-"devDependencies": {
-  "should": "6.0.1",
-  "eslint": "0.17.1",
-  "mocha": "2.*",
-  "request": "2.55.0"
-},
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "mocha": "^2.3.4",
+    "request": "^2.67.0",
+    "should": "^8.0.2"
+  },
   "dependencies": {
-    "async":"0.9.0",
-    "dockerode":"2.1.5",
-    "fs-extra": "0.16.3",
-    "handlebars": "3.0.3",
-    "html-minifier": "0.7.0",
-    "moment": "2.10.2",
-    "rsmq-worker":"0.3.2",
-    "s3":"4.4.0",
-    "tar.gz":"0.1.1",
-    "winston":"1.0.0",
-    "winston-slack":"0.1.6"
+    "async": "^1.5.1",
+    "dockerode": "^2.2.7",
+    "fs-extra": "^0.26.3",
+    "handlebars": "^4.0.5",
+    "html-minifier": "^1.0.1",
+    "moment": "^2.11.0",
+    "rsmq-worker": "0.3.7",
+    "s3": "4.4.0",
+    "tar.gz": "^1.0.2",
+    "winston": "^2.1.1",
+    "winston-slack": "0.1.6"
   }
 }
