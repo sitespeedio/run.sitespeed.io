@@ -83,18 +83,14 @@ module.exports = {
     return 'There\'s a lot of room for improvements here. Make sure you follow the most important web performance best practice rules and your site will score even better.';
   },
   getLocation: function(queueName) {
-    if (queueName === 'nyc') {
-      return 'New York';
-    } else if (queueName === 'sf') {
-      return 'San Francisco';
-    } else if (queueName === 'amsterdam') {
-      return 'Amsterdam';
-    }  else if (queueName === 'singapore') {
-      return 'Singapore';
-    }
-    else {
-      return '';
-    }
+    var queueLocations = {
+      'nyc': 'New York',
+      'sf': 'San Francisco',
+      'amsterdam': 'Amsterdam',
+      'singapore': 'Singapore'
+    };
+
+    return queueLocations[queueName] || '';
   },
   capitalize: function(word) {
     if (word) {
