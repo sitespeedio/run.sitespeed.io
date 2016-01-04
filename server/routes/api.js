@@ -29,10 +29,7 @@ router.get('/status/:sessionId', function(req, res) {
 
     if (err) {
 			log.error(err);
-			res.json({
-				status: 'unknown'
-			});
-			return;
+			status = 'unknown';
 		}
 		res.json({
 				status: status
