@@ -6,7 +6,7 @@ Before starting a worker, make sure you have exported your [environment variable
 
 
 # Running Docker version
-Export the environment in your start script that is feed to the Docker container. Start by editing your *receiver-start.sh* file and then start yoru container.
+Export the environment in your start script that is feed to the Docker container. Start by editing your *receiver-start.sh* file and then start your container.
 
 ~~~
 #!/bin/bash
