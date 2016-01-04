@@ -237,9 +237,10 @@ function startJob(message, cb) {
 
           if (err) {
             log.error('Error compressing files ', err);
+          } else {
+            log.debug('Compressing files finished');
           }
 
-          log.debug('Compressing files finished');
           callback(err);
         });
       },
