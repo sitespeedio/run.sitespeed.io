@@ -18,7 +18,6 @@ var RSMQWorker = require('rsmq-worker'),
   s3 = require('./s3'),
   async = require('async'),
   targz = require('tar.gz'),
-  moment = require('moment'),
   util = require('./util'),
   log = require('winston');
 
