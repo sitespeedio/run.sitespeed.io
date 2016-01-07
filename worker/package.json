@@ -29,10 +29,10 @@
   },
   "dependencies": {
     "async": "^1.5.1",
-    "dockerode": "^2.2.7",
-    "fs-extra": "^0.26.3",
+    "dockerode": "^2.2.8",
+    "fs-extra": "^0.26.4",
     "handlebars": "^4.0.5",
-    "html-minifier": "^1.0.1",
+    "html-minifier": "^1.1.1",
     "moment": "^2.11.0",
     "rsmq-worker": "^0.3.8",
     "s3": "4.4.0",
