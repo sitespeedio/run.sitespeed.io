@@ -27,7 +27,7 @@
   "dependencies": {
     "moment": "^2.11.0",
     "mysql": "^2.10.0",
-    "rsmq-worker": "^0.3.7",
+    "rsmq-worker": "^0.3.8",
     "winston": "^2.1.1"
   }
 }

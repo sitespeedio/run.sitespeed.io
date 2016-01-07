@@ -34,7 +34,7 @@
     "handlebars": "^4.0.5",
     "html-minifier": "^1.0.1",
     "moment": "^2.11.0",
-    "rsmq-worker": "0.3.7",
+    "rsmq-worker": "^0.3.8",
     "s3": "4.4.0",
     "tar.gz": "^1.0.2",
     "winston": "^2.1.1",
