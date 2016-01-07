@@ -156,8 +156,7 @@ function startJob(message, cb) {
           id: message.id,
           status: 'running',
           hostname: hostName
-        }));
-        callback();
+        }), callback);
       },
       function(callback) {
         docker.run(config, resultWorker, callback);
@@ -217,7 +216,7 @@ function startJob(message, cb) {
           if (err) {
             log.error('Error removing files ', err);
           }
-          callback();
+          callback(err);
 
         });
       },
@@ -227,7 +226,7 @@ function startJob(message, cb) {
           if (err) {
             log.error('Error copying files ', err);
           }
-          callback();
+          callback(err);
         });
       },
       function(callback) {
@@ -244,12 +243,10 @@ function startJob(message, cb) {
         });
       },
       function(callback) {
-        var status = 'uploading';
         resultWorker.send(JSON.stringify({
-          status: status,
+          status: 'uploading',
           id: message.id
-        }));
-        callback();
+        }), callback);
       },
       function(callback) {
         s3.uploadDir(path.join(dataDir, 'sitespeed-result', outputPath), outputPath, callback);
@@ -263,7 +260,7 @@ function startJob(message, cb) {
           status: 'failed',
           id: message.id,
           hostname: hostName
-        }));
+        }), cb);
       } else {
 
         var m = {
@@ -279,9 +276,7 @@ function startJob(message, cb) {
           m[key] = metrics[key];
         });
 
-        resultWorker.send(JSON.stringify(m));
+        resultWorker.send(JSON.stringify(m), cb);
       }
-      cb();
     });
-
 }
