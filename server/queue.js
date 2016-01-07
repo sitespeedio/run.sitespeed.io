@@ -68,7 +68,7 @@ module.exports = {
 
 				rsmq.getQueueAttributes({'qname': queue}, function(error, data) {
 					log.debug('We have ' + JSON.stringify(data.msgs) + ' in the queue');
-					cb(err, resp, data.msgs);
+					cb(error, resp, data.msgs);
 				});
 
 			} else {
