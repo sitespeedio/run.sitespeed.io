@@ -67,8 +67,7 @@ module.exports = {
       '-d', '' + config.deep,
       '--browser', config.browser, '--no', '' + config.no, '--outputFolderName', config.outputPath,
       '--suppressDomainFolder', '--connection', config.connection,
-      '--seleniumServer', 'http://127.0.0.1:4444/wd/hub', '--phantomjsPath',
-      '/usr/local/phantomjs/bin/phantomjs'
+      '--seleniumServer', 'http://127.0.0.1:4444/wd/hub'
     ], myStream, function(err, data, container) {
       if (err) {
         log.error('Error:' + util.inspect(err));
