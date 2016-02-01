@@ -101,25 +101,8 @@ process.on('SIGTERM', function() {
   );
 });
 
-async.series([
-    function(callback) {
-      log.info('Pull the container');
-      docker.pull(function(err) {
-        if (!err) {
-          log.info('Finished pulling the container');
-        }
-        callback(err);
-      });
-    }
-  ],
-
-  function(err, results) {
-    if (err) {} else {
-      log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
-      fetchWorker.start();
-    }
-  });
-
+log.info('Starting worker listening on queue ' + fetchQueue + ' send result to queue ' + resultQueue);
+fetchWorker.start();
 
 function startJob(message, cb) {
 
