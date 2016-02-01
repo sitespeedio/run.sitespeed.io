@@ -50,7 +50,7 @@ router.post('/', function(req, res) {
     url: url.toLowerCase(),
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
-    maxPagesToTest: 3,
+    maxPagesToTest: 1,
     numberOfRuns: 3,
     date: creationDate
   };
